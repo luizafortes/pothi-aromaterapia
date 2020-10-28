@@ -39,10 +39,18 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dadosAdicionais = new System.Windows.Forms.GroupBox();
             this.endereco = new System.Windows.Forms.GroupBox();
-            this.listBoxTipoLogradouro = new System.Windows.Forms.ListBox();
-            this.labelTipoLogradouro = new System.Windows.Forms.Label();
             this.labelLogradouro = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
+            this.labelTipoLogradouro = new System.Windows.Forms.Label();
+            this.comboBoxTipoLogradouro = new System.Windows.Forms.ComboBox();
+            this.comboBoxCidade = new System.Windows.Forms.ComboBox();
+            this.labelCidade = new System.Windows.Forms.Label();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
+            this.labelEstado = new System.Windows.Forms.Label();
+            this.labelCEP = new System.Windows.Forms.Label();
+            this.txtCEP = new System.Windows.Forms.MaskedTextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.labelComplemento = new System.Windows.Forms.Label();
             this.dadosPrincipais.SuspendLayout();
             this.endereco.SuspendLayout();
             this.SuspendLayout();
@@ -136,40 +144,51 @@
             // 
             // dadosAdicionais
             // 
-            this.dadosAdicionais.Location = new System.Drawing.Point(12, 356);
+            this.dadosAdicionais.Location = new System.Drawing.Point(12, 311);
             this.dadosAdicionais.Name = "dadosAdicionais";
-            this.dadosAdicionais.Size = new System.Drawing.Size(455, 155);
+            this.dadosAdicionais.Size = new System.Drawing.Size(455, 200);
             this.dadosAdicionais.TabIndex = 1;
             this.dadosAdicionais.TabStop = false;
             this.dadosAdicionais.Text = "Dados Adicionais";
             // 
             // endereco
             // 
+            this.endereco.Controls.Add(this.labelComplemento);
+            this.endereco.Controls.Add(this.txtComplemento);
+            this.endereco.Controls.Add(this.txtCEP);
+            this.endereco.Controls.Add(this.labelCEP);
+            this.endereco.Controls.Add(this.comboBoxEstado);
+            this.endereco.Controls.Add(this.labelEstado);
+            this.endereco.Controls.Add(this.comboBoxCidade);
+            this.endereco.Controls.Add(this.labelCidade);
+            this.endereco.Controls.Add(this.comboBoxTipoLogradouro);
             this.endereco.Controls.Add(this.labelLogradouro);
             this.endereco.Controls.Add(this.txtLogradouro);
-            this.endereco.Controls.Add(this.listBoxTipoLogradouro);
             this.endereco.Controls.Add(this.labelTipoLogradouro);
             this.endereco.Location = new System.Drawing.Point(12, 195);
             this.endereco.Name = "endereco";
-            this.endereco.Size = new System.Drawing.Size(455, 155);
+            this.endereco.Size = new System.Drawing.Size(455, 110);
             this.endereco.TabIndex = 9;
             this.endereco.TabStop = false;
             this.endereco.Text = "Endereço";
             // 
-            // listBoxTipoLogradouro
+            // labelLogradouro
             // 
-            this.listBoxTipoLogradouro.BackColor = System.Drawing.SystemColors.Info;
-            this.listBoxTipoLogradouro.FormattingEnabled = true;
-            this.listBoxTipoLogradouro.Items.AddRange(new object[] {
-            "Avenida",
-            "Estrada",
-            "Rodovia",
-            "Rua",
-            "Travessa"});
-            this.listBoxTipoLogradouro.Location = new System.Drawing.Point(7, 36);
-            this.listBoxTipoLogradouro.Name = "listBoxTipoLogradouro";
-            this.listBoxTipoLogradouro.Size = new System.Drawing.Size(90, 69);
-            this.listBoxTipoLogradouro.TabIndex = 5;
+            this.labelLogradouro.AutoSize = true;
+            this.labelLogradouro.Location = new System.Drawing.Point(100, 20);
+            this.labelLogradouro.Name = "labelLogradouro";
+            this.labelLogradouro.Size = new System.Drawing.Size(61, 13);
+            this.labelLogradouro.TabIndex = 10;
+            this.labelLogradouro.Text = "Logradouro";
+            // 
+            // txtLogradouro
+            // 
+            this.txtLogradouro.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLogradouro.Location = new System.Drawing.Point(103, 36);
+            this.txtLogradouro.Multiline = true;
+            this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Size = new System.Drawing.Size(346, 21);
+            this.txtLogradouro.TabIndex = 9;
             // 
             // labelTipoLogradouro
             // 
@@ -180,23 +199,104 @@
             this.labelTipoLogradouro.TabIndex = 1;
             this.labelTipoLogradouro.Text = "Tipo ";
             // 
-            // labelLogradouro
+            // comboBoxTipoLogradouro
             // 
-            this.labelLogradouro.AutoSize = true;
-            this.labelLogradouro.Location = new System.Drawing.Point(100, 20);
-            this.labelLogradouro.Name = "labelLogradouro";
-            this.labelLogradouro.Size = new System.Drawing.Size(32, 13);
-            this.labelLogradouro.TabIndex = 10;
-            this.labelLogradouro.Text = "Email";
+            this.comboBoxTipoLogradouro.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBoxTipoLogradouro.FormattingEnabled = true;
+            this.comboBoxTipoLogradouro.Items.AddRange(new object[] {
+            "Avenida",
+            "Estrada",
+            "Rodovia",
+            "Rua",
+            "Travessa"});
+            this.comboBoxTipoLogradouro.Location = new System.Drawing.Point(9, 36);
+            this.comboBoxTipoLogradouro.Name = "comboBoxTipoLogradouro";
+            this.comboBoxTipoLogradouro.Size = new System.Drawing.Size(88, 21);
+            this.comboBoxTipoLogradouro.TabIndex = 11;
             // 
-            // txtLogradouro
+            // comboBoxCidade
             // 
-            this.txtLogradouro.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLogradouro.Location = new System.Drawing.Point(103, 36);
-            this.txtLogradouro.Multiline = true;
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(255, 34);
-            this.txtLogradouro.TabIndex = 9;
+            this.comboBoxCidade.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBoxCidade.FormattingEnabled = true;
+            this.comboBoxCidade.Items.AddRange(new object[] {
+            "Avenida",
+            "Estrada",
+            "Rodovia",
+            "Rua",
+            "Travessa"});
+            this.comboBoxCidade.Location = new System.Drawing.Point(173, 77);
+            this.comboBoxCidade.Name = "comboBoxCidade";
+            this.comboBoxCidade.Size = new System.Drawing.Size(88, 21);
+            this.comboBoxCidade.TabIndex = 13;
+            // 
+            // labelCidade
+            // 
+            this.labelCidade.AutoSize = true;
+            this.labelCidade.Location = new System.Drawing.Point(170, 61);
+            this.labelCidade.Name = "labelCidade";
+            this.labelCidade.Size = new System.Drawing.Size(40, 13);
+            this.labelCidade.TabIndex = 12;
+            this.labelCidade.Text = "Cidade";
+            // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "Avenida",
+            "Estrada",
+            "Rodovia",
+            "Rua",
+            "Travessa"});
+            this.comboBoxEstado.Location = new System.Drawing.Point(267, 77);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(88, 21);
+            this.comboBoxEstado.TabIndex = 15;
+            // 
+            // labelEstado
+            // 
+            this.labelEstado.AutoSize = true;
+            this.labelEstado.Location = new System.Drawing.Point(264, 61);
+            this.labelEstado.Name = "labelEstado";
+            this.labelEstado.Size = new System.Drawing.Size(40, 13);
+            this.labelEstado.TabIndex = 14;
+            this.labelEstado.Text = "Estado";
+            // 
+            // labelCEP
+            // 
+            this.labelCEP.AutoSize = true;
+            this.labelCEP.Location = new System.Drawing.Point(358, 61);
+            this.labelCEP.Name = "labelCEP";
+            this.labelCEP.Size = new System.Drawing.Size(28, 13);
+            this.labelCEP.TabIndex = 16;
+            this.labelCEP.Text = "CEP";
+            // 
+            // txtCEP
+            // 
+            this.txtCEP.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCEP.Location = new System.Drawing.Point(361, 77);
+            this.txtCEP.Mask = "00000-999";
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(88, 20);
+            this.txtCEP.TabIndex = 9;
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.BackColor = System.Drawing.SystemColors.Info;
+            this.txtComplemento.Location = new System.Drawing.Point(9, 77);
+            this.txtComplemento.Multiline = true;
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(158, 21);
+            this.txtComplemento.TabIndex = 17;
+            // 
+            // labelComplemento
+            // 
+            this.labelComplemento.AutoSize = true;
+            this.labelComplemento.Location = new System.Drawing.Point(6, 61);
+            this.labelComplemento.Name = "labelComplemento";
+            this.labelComplemento.Size = new System.Drawing.Size(71, 13);
+            this.labelComplemento.TabIndex = 18;
+            this.labelComplemento.Text = "Complemento";
             // 
             // PessoaCadastroForm
             // 
@@ -230,9 +330,17 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.GroupBox dadosAdicionais;
         private System.Windows.Forms.GroupBox endereco;
-        private System.Windows.Forms.ListBox listBoxTipoLogradouro;
         private System.Windows.Forms.Label labelTipoLogradouro;
         private System.Windows.Forms.Label labelLogradouro;
         private System.Windows.Forms.TextBox txtLogradouro;
+        private System.Windows.Forms.Label labelComplemento;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.MaskedTextBox txtCEP;
+        private System.Windows.Forms.Label labelCEP;
+        private System.Windows.Forms.ComboBox comboBoxEstado;
+        private System.Windows.Forms.Label labelEstado;
+        private System.Windows.Forms.ComboBox comboBoxCidade;
+        private System.Windows.Forms.Label labelCidade;
+        private System.Windows.Forms.ComboBox comboBoxTipoLogradouro;
     }
 }
