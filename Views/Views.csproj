@@ -114,24 +114,6 @@
     <Compile Include="Sintoma\Edicao.Designer.cs">
       <DependentUpon>Edicao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuario\Cadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario\Cadastro.Designer.cs">
-      <DependentUpon>Cadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario\Consulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario\Consulta.Designer.cs">
-      <DependentUpon>Consulta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario\Edicao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario\Edicao.Designer.cs">
-      <DependentUpon>Edicao.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,12 +7,12 @@ using Entities;
 
 namespace Repositories.Interfaces
 {
-    public interface IPessoaRepository : IBaseRepository<Pessoa>
+    public interface IPessoaRepository : IBaseRepository<PessoaModel>
     {
-        List<Pessoa> GetByNome(string _nome);
-        Pessoa GetByEmail(string _email);
-        Pessoa GetByCpf(string _cpf);
-        List<Pessoa> GetByCidade(string _cidade);
-        List<Pessoa> GetByEstado(string _estado);
+        List<PessoaModel> GetByNome(string _nome);
+        PessoaModel GetByEmail(string _email);
+        PessoaModel GetByCpf(string _cpf);
+        List<PessoaModel> GetByCidade(string _cidade);
+        List<PessoaModel> GetByEstado(string _estado);
     }
 }

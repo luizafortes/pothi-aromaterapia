@@ -25,7 +25,7 @@ namespace Views.Login
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Entities.Usuario user = new Entities.Usuario();
+            UsuarioModel user = new UsuarioModel();
             user.Login = txtUsuario.Text;
             user.Senha = txtSenha.Text;
             if (ValidarLogin(user))
@@ -49,7 +49,7 @@ namespace Views.Login
             this.Close();
         }
 
-        private bool ValidarLogin(Entities.Usuario _user)
+        private bool ValidarLogin(UsuarioModel _user)
         {
             try
             {

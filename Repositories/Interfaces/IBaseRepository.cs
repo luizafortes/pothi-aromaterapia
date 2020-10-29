@@ -8,7 +8,7 @@ namespace Repositories.Interfaces
 {
     public interface IBaseRepository<T> where T : class
     {
-        void Insert(T _model);
+        bool Insert(T _model);
         void Update(int _id, T _model);
         void Delete(int _id);
         List<T> GetAll();

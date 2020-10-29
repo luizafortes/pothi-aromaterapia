@@ -31,7 +31,7 @@
             this.dadosPrincipais = new System.Windows.Forms.GroupBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.labelTelefone = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.labelCPF = new System.Windows.Forms.Label();
@@ -39,17 +39,17 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dadosAdicionais = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.ckbFilhos = new System.Windows.Forms.CheckBox();
+            this.ckbAnimais = new System.Windows.Forms.CheckBox();
+            this.ckbFumante = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rdbDivorciado = new System.Windows.Forms.RadioButton();
+            this.rdbSolteiro = new System.Windows.Forms.RadioButton();
+            this.rdbCasado = new System.Windows.Forms.RadioButton();
+            this.rdbViuvo = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbFeminino = new System.Windows.Forms.RadioButton();
+            this.rdbMasculino = new System.Windows.Forms.RadioButton();
             this.endereco = new System.Windows.Forms.GroupBox();
             this.labelComplemento = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@
             // 
             this.dadosPrincipais.Controls.Add(this.labelEmail);
             this.dadosPrincipais.Controls.Add(this.txtEmail);
-            this.dadosPrincipais.Controls.Add(this.maskedTextBox2);
+            this.dadosPrincipais.Controls.Add(this.txtTel);
             this.dadosPrincipais.Controls.Add(this.labelTelefone);
             this.dadosPrincipais.Controls.Add(this.txtCPF);
             this.dadosPrincipais.Controls.Add(this.labelCPF);
@@ -107,14 +107,14 @@
             this.txtEmail.Size = new System.Drawing.Size(346, 20);
             this.txtEmail.TabIndex = 7;
             // 
-            // maskedTextBox2
+            // txtTel
             // 
-            this.maskedTextBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.maskedTextBox2.Location = new System.Drawing.Point(9, 75);
-            this.maskedTextBox2.Mask = "(99) 90000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(88, 20);
-            this.maskedTextBox2.TabIndex = 6;
+            this.txtTel.BackColor = System.Drawing.SystemColors.Info;
+            this.txtTel.Location = new System.Drawing.Point(9, 75);
+            this.txtTel.Mask = "(99) 90000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(88, 20);
+            this.txtTel.TabIndex = 6;
             // 
             // labelTelefone
             // 
@@ -174,9 +174,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox3);
+            this.groupBox3.Controls.Add(this.ckbFilhos);
+            this.groupBox3.Controls.Add(this.ckbAnimais);
+            this.groupBox3.Controls.Add(this.ckbFumante);
             this.groupBox3.Location = new System.Drawing.Point(324, 20);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(125, 132);
@@ -184,42 +184,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Outros";
             // 
-            // checkBox1
+            // ckbFilhos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Filhos";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbFilhos.AutoSize = true;
+            this.ckbFilhos.Location = new System.Drawing.Point(6, 22);
+            this.ckbFilhos.Name = "ckbFilhos";
+            this.ckbFilhos.Size = new System.Drawing.Size(53, 17);
+            this.ckbFilhos.TabIndex = 6;
+            this.ckbFilhos.Text = "Filhos";
+            this.ckbFilhos.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // ckbAnimais
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 44);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(62, 17);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "Animais";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbAnimais.AutoSize = true;
+            this.ckbAnimais.Location = new System.Drawing.Point(6, 44);
+            this.ckbAnimais.Name = "ckbAnimais";
+            this.ckbAnimais.Size = new System.Drawing.Size(62, 17);
+            this.ckbAnimais.TabIndex = 7;
+            this.ckbAnimais.Text = "Animais";
+            this.ckbAnimais.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ckbFumante
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 67);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(67, 17);
-            this.checkBox3.TabIndex = 8;
-            this.checkBox3.Text = "Fumante";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckbFumante.AutoSize = true;
+            this.ckbFumante.Location = new System.Drawing.Point(6, 67);
+            this.ckbFumante.Name = "ckbFumante";
+            this.ckbFumante.Size = new System.Drawing.Size(67, 17);
+            this.ckbFumante.TabIndex = 8;
+            this.ckbFumante.Text = "Fumante";
+            this.ckbFumante.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton5);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton6);
+            this.groupBox2.Controls.Add(this.rdbDivorciado);
+            this.groupBox2.Controls.Add(this.rdbSolteiro);
+            this.groupBox2.Controls.Add(this.rdbCasado);
+            this.groupBox2.Controls.Add(this.rdbViuvo);
             this.groupBox2.Location = new System.Drawing.Point(164, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(131, 133);
@@ -227,54 +227,54 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado Civil";
             // 
-            // radioButton5
+            // rdbDivorciado
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(6, 68);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(76, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Divorciado";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdbDivorciado.AutoSize = true;
+            this.rdbDivorciado.Location = new System.Drawing.Point(6, 68);
+            this.rdbDivorciado.Name = "rdbDivorciado";
+            this.rdbDivorciado.Size = new System.Drawing.Size(76, 17);
+            this.rdbDivorciado.TabIndex = 4;
+            this.rdbDivorciado.TabStop = true;
+            this.rdbDivorciado.Text = "Divorciado";
+            this.rdbDivorciado.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdbSolteiro
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 22);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(60, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Solteiro";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbSolteiro.AutoSize = true;
+            this.rdbSolteiro.Location = new System.Drawing.Point(6, 22);
+            this.rdbSolteiro.Name = "rdbSolteiro";
+            this.rdbSolteiro.Size = new System.Drawing.Size(60, 17);
+            this.rdbSolteiro.TabIndex = 2;
+            this.rdbSolteiro.TabStop = true;
+            this.rdbSolteiro.Text = "Solteiro";
+            this.rdbSolteiro.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdbCasado
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 45);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(61, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Casado";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbCasado.AutoSize = true;
+            this.rdbCasado.Location = new System.Drawing.Point(6, 45);
+            this.rdbCasado.Name = "rdbCasado";
+            this.rdbCasado.Size = new System.Drawing.Size(61, 17);
+            this.rdbCasado.TabIndex = 3;
+            this.rdbCasado.TabStop = true;
+            this.rdbCasado.Text = "Casado";
+            this.rdbCasado.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdbViuvo
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(6, 91);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(52, 17);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Viúvo";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdbViuvo.AutoSize = true;
+            this.rdbViuvo.Location = new System.Drawing.Point(6, 91);
+            this.rdbViuvo.Name = "rdbViuvo";
+            this.rdbViuvo.Size = new System.Drawing.Size(52, 17);
+            this.rdbViuvo.TabIndex = 5;
+            this.rdbViuvo.TabStop = true;
+            this.rdbViuvo.Text = "Viúvo";
+            this.rdbViuvo.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.rdbFeminino);
+            this.groupBox1.Controls.Add(this.rdbMasculino);
             this.groupBox1.Location = new System.Drawing.Point(9, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(123, 133);
@@ -282,27 +282,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
             // 
-            // radioButton1
+            // rdbFeminino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Feminino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbFeminino.AutoSize = true;
+            this.rdbFeminino.Location = new System.Drawing.Point(6, 22);
+            this.rdbFeminino.Name = "rdbFeminino";
+            this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rdbFeminino.TabIndex = 0;
+            this.rdbFeminino.TabStop = true;
+            this.rdbFeminino.Text = "Feminino";
+            this.rdbFeminino.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbMasculino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 45);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Masculino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Location = new System.Drawing.Point(6, 45);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rdbMasculino.TabIndex = 1;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
             // endereco
             // 
@@ -459,6 +459,7 @@
             this.buttonSalvar.TabIndex = 10;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -502,7 +503,7 @@
         private System.Windows.Forms.GroupBox dadosPrincipais;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtTel;
         private System.Windows.Forms.Label labelTelefone;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.Label labelCPF;
@@ -523,17 +524,17 @@
         private System.Windows.Forms.Label labelCidade;
         private System.Windows.Forms.ComboBox comboBoxTipoLogradouro;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox ckbFilhos;
+        private System.Windows.Forms.CheckBox ckbAnimais;
+        private System.Windows.Forms.CheckBox ckbFumante;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rdbDivorciado;
+        private System.Windows.Forms.RadioButton rdbSolteiro;
+        private System.Windows.Forms.RadioButton rdbCasado;
+        private System.Windows.Forms.RadioButton rdbViuvo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbFeminino;
+        private System.Windows.Forms.RadioButton rdbMasculino;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
     }

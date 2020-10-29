@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Sintoma
+    public class SintomaModel
     {
         public int SintomaId { get; set; }
         public string Nome { get; set; }
-        public List<Oleo> Oleos { get; set; }
+        public List<OleoModel> Oleos { get; set; }
     }
 }

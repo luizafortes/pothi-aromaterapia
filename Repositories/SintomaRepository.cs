@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Enums
+namespace Repositories
 {
-    public enum Sexo
+    class SintomaRepository
     {
-        Feminino = 1,
-        Masculino = 2
     }
 }

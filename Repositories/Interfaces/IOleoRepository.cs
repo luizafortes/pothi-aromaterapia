@@ -7,10 +7,10 @@ using Entities;
 
 namespace Repositories.Interfaces
 {
-    public interface IOleoRepository : IBaseRepository<Oleo>
+    public interface IOleoRepository : IBaseRepository<OleoModel>
     {
-        List<Oleo> GetByNome(string _nome);
-        List<Oleo> GetBySintoma(string _sintoma);
+        List<OleoModel> GetByNome(string _nome);
+        List<OleoModel> GetBySintoma(string _sintoma);
         int CountSintomas(int _idOleo);
     }
 }

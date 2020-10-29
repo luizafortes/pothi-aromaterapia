@@ -45,6 +45,7 @@ namespace Views
             this.timeStamp = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.relogio = new System.Windows.Forms.Timer(this.components);
+            this.labelDadosUsuario = new System.Windows.Forms.Label();
             this.menuPrincipal.SuspendLayout();
             this.rodape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,12 +154,23 @@ namespace Views
             this.relogio.Interval = 1000;
             this.relogio.Tick += new System.EventHandler(this.relogio_Tick);
             // 
+            // labelDadosUsuario
+            // 
+            this.labelDadosUsuario.AutoSize = true;
+            this.labelDadosUsuario.Location = new System.Drawing.Point(853, 649);
+            this.labelDadosUsuario.Name = "labelDadosUsuario";
+            this.labelDadosUsuario.Size = new System.Drawing.Size(16, 13);
+            this.labelDadosUsuario.TabIndex = 4;
+            this.labelDadosUsuario.Text = "...";
+            this.labelDadosUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1008, 668);
+            this.Controls.Add(this.labelDadosUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rodape);
             this.Controls.Add(this.menuPrincipal);
@@ -193,6 +205,7 @@ namespace Views
         private ToolStripStatusLabel timeStamp;
         private PictureBox pictureBox1;
         private Timer relogio;
+        private Label labelDadosUsuario;
     }
 }
 

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entities.Enums
 {
-    public enum Sexo
+    public enum EstadoCivil
     {
-        Feminino = 1,
-        Masculino = 2
+        Solteiro = 1,
+        Casado = 2,
+        Divorciado = 3,
+        Viuvo = 4
     }
 }

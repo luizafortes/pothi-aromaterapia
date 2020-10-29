@@ -59,7 +59,7 @@
             this.labelLoginError.ForeColor = System.Drawing.Color.Red;
             this.labelLoginError.Location = new System.Drawing.Point(32, 130);
             this.labelLoginError.Name = "labelLoginError";
-            this.labelLoginError.Size = new System.Drawing.Size(95, 13);
+            this.labelLoginError.Size = new System.Drawing.Size(137, 13);
             this.labelLoginError.TabIndex = 4;
             this.labelLoginError.Text = "Usuário ou senha inválidos!";
             // 
@@ -70,6 +70,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(186, 20);
             this.txtSenha.TabIndex = 3;
+            this.txtSenha.Text = "admin";
             // 
             // txtUsuario
             // 
@@ -77,6 +78,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(186, 20);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "admin";
             // 
             // labelSenha
             // 

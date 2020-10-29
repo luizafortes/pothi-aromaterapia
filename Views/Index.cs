@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Views.Pessoa;
 using Views.Login;
+using Entities;
 
 namespace Views
 {
@@ -46,6 +47,9 @@ namespace Views
 
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
+                UsuarioModel user = (UsuarioModel)loginForm.Tag;
+
+                labelDadosUsuario.Text = "Usuário logado: " + user.Login;
                 this.Show();
             }
             else

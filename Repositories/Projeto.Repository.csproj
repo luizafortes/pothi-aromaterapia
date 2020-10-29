@@ -45,7 +45,10 @@
     <Compile Include="Interfaces\IOleoRepository.cs" />
     <Compile Include="Interfaces\IPessoaRepository.cs" />
     <Compile Include="Interfaces\ISintomaRepository.cs" />
+    <Compile Include="OleoRepository.cs" />
+    <Compile Include="PessoaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SintomaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">

@@ -41,13 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Endereco.cs" />
+    <Compile Include="EnderecoModel.cs" />
+    <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Sexo.cs" />
-    <Compile Include="Oleo.cs" />
-    <Compile Include="Pessoa.cs" />
+    <Compile Include="OleoModel.cs" />
+    <Compile Include="PessoaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sintoma.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="SintomaModel.cs" />
+    <Compile Include="UsuarioModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
