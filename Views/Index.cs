@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Views.Pessoa;
+using Views.Login;
 
 namespace Views
 {
@@ -38,6 +39,19 @@ namespace Views
         private void Index_Load(object sender, EventArgs e)
         {
             relogio.Enabled = true;
+
+            this.Hide();
+
+            loginForm loginForm = new loginForm();
+
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
