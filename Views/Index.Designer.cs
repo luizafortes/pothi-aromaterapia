@@ -40,7 +40,11 @@ namespace Views
             this.menuCadastroOleo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConsultaOleo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSintoma = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rodape = new System.Windows.Forms.StatusStrip();
             this.timeStamp = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -102,6 +106,7 @@ namespace Views
             this.menuCadastroOleo.Size = new System.Drawing.Size(125, 22);
             this.menuCadastroOleo.Text = "Cadastrar";
             this.menuCadastroOleo.ToolTipText = "Cadastrar Óleo";
+            this.menuCadastroOleo.Click += new System.EventHandler(this.CadastrarOleo);
             // 
             // menuConsultaOleo
             // 
@@ -109,18 +114,53 @@ namespace Views
             this.menuConsultaOleo.Size = new System.Drawing.Size(125, 22);
             this.menuConsultaOleo.Text = "Consultar";
             this.menuConsultaOleo.ToolTipText = "Consultar óleo";
+            this.menuConsultaOleo.Click += new System.EventHandler(this.ConsultarOleo);
             // 
             // menuSintoma
             // 
+            this.menuSintoma.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem1,
+            this.consultarToolStripMenuItem1});
             this.menuSintoma.Name = "menuSintoma";
             this.menuSintoma.Size = new System.Drawing.Size(68, 20);
             this.menuSintoma.Text = "Sintomas";
             // 
+            // cadastrarToolStripMenuItem1
+            // 
+            this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.CadastrarSintoma);
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.ConsultarSintoma);
+            // 
             // menuUsuario
             // 
+            this.menuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem,
+            this.consultarToolStripMenuItem});
             this.menuUsuario.Name = "menuUsuario";
             this.menuUsuario.Size = new System.Drawing.Size(64, 20);
             this.menuUsuario.Text = "Usuários";
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.CadastrarUsuario);
+            // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuario);
             // 
             // rodape
             // 
@@ -206,6 +246,10 @@ namespace Views
         private PictureBox pictureBox1;
         private Timer relogio;
         private Label labelDadosUsuario;
+        private ToolStripMenuItem cadastrarToolStripMenuItem1;
+        private ToolStripMenuItem consultarToolStripMenuItem1;
+        private ToolStripMenuItem cadastrarToolStripMenuItem;
+        private ToolStripMenuItem consultarToolStripMenuItem;
     }
 }
 

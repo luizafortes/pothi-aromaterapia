@@ -1,0 +1,4 @@
+10422534714;Luiza Fortes;(21) 98851-5381;luizafortes@gmail.com;Feminino;Solteiro;False;False;False;3 Graciliano Ramos, 3 Apto 907, 24230-360, -1, -1;
+10422534714;Luiza Fortes;(21) 98851-5381;luizafortes@gmail.com;Feminino;Solteiro;False;False;False;3 Graciliano Ramos, 3 Apto 907, 24230-360, -1, -1;
+         ;Nicole Fortes;(  )      -;;Masculino;Viuvo;False;False;False;-1  ,      -, -1, -1;
+         ;;(  )      -;;Masculino;Viuvo;False;False;False;-1  ,      -, -1, -1;

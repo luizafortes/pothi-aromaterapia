@@ -10,6 +10,7 @@ namespace Entities
     {
         public int SintomaId { get; set; }
         public string Nome { get; set; }
+        public string Descricao { get; set; }
         public List<OleoModel> Oleos { get; set; }
     }
 }

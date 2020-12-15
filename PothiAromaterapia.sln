@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Controll", "2 - Controll", "{5B55F255-A01A-4C1A-80EB-318677AD7570}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Controller", "2 - Controller", "{5B55F255-A01A-4C1A-80EB-318677AD7570}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - View", "1 - View", "{6B0ADF17-04EB-4943-8B4F-6B040737B790}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data Access Object", "3 - Data Access Object", "{58D4AC9E-6E66-4710-A213-A643C5695503}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data Access", "3 - Data Access", "{58D4AC9E-6E66-4710-A213-A643C5695503}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Model", "0 - Model", "{DE64EED0-413F-4A77-B552-8A5C126E366C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Entity", "0 - Entity", "{DE64EED0-413F-4A77-B552-8A5C126E366C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{021F91FB-AA8B-4223-94C9-EF5C31AFF21A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{3575A49B-D38C-4A05-8FB0-9B56A272A2CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto.Repository", "Repositories\Projeto.Repository.csproj", "{F6A71A55-C84E-441A-8ECD-A401B6F27537}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{F6A71A55-C84E-441A-8ECD-A401B6F27537}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "Views\Views.csproj", "{3F0B8ED7-F30B-46C3-A81E-D19F1C0C51E9}"
 EndProject

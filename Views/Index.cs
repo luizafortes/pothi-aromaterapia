@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Views.Pessoa;
 using Views.Login;
 using Entities;
+using Views.Usuario;
+using Views.Oleo;
+using Views.Sintoma;
 
 namespace Views
 {
@@ -18,18 +21,6 @@ namespace Views
         public Index()
         {
             InitializeComponent();
-        }
-
-        private void CadastrarPessoa(object sender, EventArgs e)
-        {
-            PessoaCadastroForm form = new PessoaCadastroForm();
-            form.ShowDialog();
-        }
-
-        private void ConsultarPessoa(object sender, EventArgs e)
-        {
-            PessoaConsultaForm form = new PessoaConsultaForm();
-            form.ShowDialog();
         }
 
         private void relogio_Tick(object sender, EventArgs e)
@@ -57,5 +48,54 @@ namespace Views
                 this.Close();
             }
         }
+
+        private void CadastrarPessoa(object sender, EventArgs e)
+        {
+            PessoaCadastroForm form = new PessoaCadastroForm();
+            form.ShowDialog();
+        }
+
+        private void ConsultarPessoa(object sender, EventArgs e)
+        {
+            PessoaConsultaForm form = new PessoaConsultaForm();
+            form.ShowDialog();
+        }
+
+        private void CadastrarUsuario(object sender, EventArgs e)
+        {
+            UsuarioCadastroForm form = new UsuarioCadastroForm();
+            form.ShowDialog();
+        }
+
+        private void ConsultarUsuario(object sender, EventArgs e)
+        {
+            ConsultaUsuarioForm form = new ConsultaUsuarioForm();
+            form.ShowDialog();
+        }
+
+        private void CadastrarOleo(object sender, EventArgs e)
+        {
+            OleoCadastroForm form = new OleoCadastroForm();
+            form.ShowDialog();
+        }
+
+        private void ConsultarOleo(object sender, EventArgs e)
+        {
+            ConsultaOleoForm form = new ConsultaOleoForm();
+            form.ShowDialog();
+        }
+
+        private void CadastrarSintoma(object sender, EventArgs e)
+        {
+            SintomaCadastroForm form = new SintomaCadastroForm();
+            form.ShowDialog();
+        }
+
+        private void ConsultarSintoma(object sender, EventArgs e)
+        {
+            ConsultaSintomaForm form = new ConsultaSintomaForm();
+            form.ShowDialog();
+        }
+
     }
 }

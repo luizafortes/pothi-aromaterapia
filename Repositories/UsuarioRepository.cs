@@ -8,27 +8,30 @@ using Entities;
 
 namespace Repositories
 {
-    public class SintomaRepository
+    public class UsuarioRepository
     {
+
         #region "Operações com Banco de Dados"
 
-        public Dictionary<int, SintomaModel> GetAll()
+        public Dictionary<Int64, UsuarioModel> GetAll()
         {
-            Dictionary<int, SintomaModel> mapaSintomas = new Dictionary<int, SintomaModel>();
+            Dictionary<Int64, UsuarioModel> mapaUsuarios = new Dictionary<Int64, UsuarioModel>();
             try
             {
-                String SQL = "SELECT * FROM sintoma;";
+                String SQL = "SELECT * FROM usuario;";
 
                 SqlDataReader data = Conexao.ExecutarSelect(SQL);
 
                 while (data.Read())
                 {
-                    SintomaModel s = new SintomaModel();
+                    UsuarioModel u = new UsuarioModel();
 
-                    s.SintomaId = Convert.ToInt32(data["SintomaId"]);
-                    s.Nome = data["Nome"].ToString();
+                    u.Login = data["Login"].ToString();
+                    u.Senha = data["Senha"].ToString();
+                    u.Nome = data["Nome"].ToString();
+                    u.Email = data["Email"].ToString();
 
-                    mapaSintomas.Add(s.SintomaId, s);
+                    mapaUsuarios.Add(u.UsuarioId, u);
                 }
 
                 data.Close();
@@ -39,24 +42,26 @@ namespace Repositories
                 throw new Exception(ex.Message);
             }
 
-            return mapaSintomas;
+            return mapaUsuarios;
         }
 
-        public SintomaModel GetForID(int _id)
+        public UsuarioModel GetForID(int _id)
         {
-            SintomaModel s = null;
+            UsuarioModel u = null;
             try
             {
-                String SQL = String.Format("SELECT * FROM sintoma WHERE sintomaId = {0};", _id);
+                String SQL = String.Format("SELECT * FROM usuario WHERE usuarioId = {0};", _id);
 
                 SqlDataReader data = Conexao.ExecutarSelect(SQL);
 
                 if (data.Read())
                 {
-                    s = new SintomaModel();
+                    u = new UsuarioModel();
 
-                    s.SintomaId = Convert.ToInt32(data["SintomaId"]);
-                    s.Nome = data["Nome"].ToString();
+                    u.UsuarioId = Convert.ToInt32(data["usuarioId"]);
+                    u.Nome = data["Nome"].ToString();
+                    u.Tel = data["Tel"].ToString();
+                    u.Email = data["Email"].ToString();
                 }
 
                 data.Close();
@@ -67,18 +72,24 @@ namespace Repositories
                 throw new Exception(ex.Message);
             }
 
-            return s;
+            return u;
         }
 
-        public Boolean Insert(SintomaModel _obj)
+        public Boolean Insert(UsuarioModel _obj)
         {
             Boolean resultado = false;
             try
             {
-                String SQL = String.Format("INSERT INTO sintoma (" +
-                    "nome) " +
-                    "VALUES ('{0}')",
-                    _obj.Nome.ToString()
+                String SQL = String.Format("INSERT INTO usuario (" +
+                    "login, " +
+                    "senha, " +
+                    "nome, " +
+                    "email) " +
+                    "VALUES ({0}, '{1}', '{2}', '{3}')",
+                    _obj.Login.ToString(),
+                    _obj.Nome.ToString(),
+                    _obj.Senha.ToString(),
+                    _obj.Email.ToString()
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);
@@ -102,7 +113,7 @@ namespace Repositories
             Boolean resultado = false;
             try
             {
-                String SQL = "DELETE FROM sintoma WHERE sintomaId = " + _id;
+                String SQL = "DELETE FROM usuario WHERE usuarioId = " + _id;
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);
 
@@ -119,15 +130,20 @@ namespace Repositories
             }
         }
 
-        public Boolean Update(SintomaModel _obj)
+        public Boolean Update(UsuarioModel _obj)
         {
             Boolean resultado = false;
             try
             {
-                String SQL = String.Format("UPDATE sintoma SET " +
-                    "nome = '{0}' WHERE sintomaId = {1}",
-                    _obj.Nome.ToString(),
-                    _obj.SintomaId.ToString()
+                String SQL = String.Format("UPDATE usuario SET " +
+                    "login = '{0}', " +
+                    "senha = '{1}', " +
+                    "nome = '{2}', " +
+                    "email = '{3}' WHERE usuarioId = {4}",
+                    _obj.Login,
+                    _obj.Senha,
+                    _obj.Nome,
+                    _obj.Email
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);
@@ -146,17 +162,17 @@ namespace Repositories
         }
 
         //Adicionado para implementar as opções de filtro
-        public Dictionary<int, SintomaModel> BuscarListaFiltrada(String _filtros)
+        public Dictionary<int, UsuarioModel> BuscarListaFiltrada(String _filtros)
         {
-            Dictionary<int, SintomaModel> mapaSintomas = new Dictionary<int, SintomaModel>();
+            Dictionary<int, UsuarioModel> mapaUsuarios = new Dictionary<int, UsuarioModel>();
             try
             {
-                String SQL = "SELECT * FROM sintoma WHERE ";
+                String SQL = "SELECT * FROM usuario WHERE ";
 
                 int saida;
                 if (int.TryParse(_filtros, out saida))
                 {
-                    SQL += String.Format("sintomaId = {0}", _filtros);
+                    SQL += String.Format("usuarioId = {0}", _filtros);
                 }
                 else
                 {
@@ -167,12 +183,14 @@ namespace Repositories
 
                 while (data.Read())
                 {
-                    SintomaModel s = new SintomaModel();
+                    UsuarioModel u = new UsuarioModel();
 
-                    s.SintomaId = Convert.ToInt32(data["SintomaId"]);
-                    s.Nome = data["Nome"].ToString();
+                    u.UsuarioId = Convert.ToInt32(data["usuarioId"]);
+                    u.Nome = data["Nome"].ToString();
+                    u.Tel = data["Tel"].ToString();
+                    u.Email = data["Email"].ToString();
 
-                    mapaSintomas.Add(s.SintomaId, s);
+                    mapaUsuarios.Add(u.UsuarioId, u);
                 }
 
                 data.Close();
@@ -183,7 +201,7 @@ namespace Repositories
                 throw new Exception(ex.Message);
             }
 
-            return mapaSintomas;
+            return mapaUsuarios;
         }
 
         #endregion
