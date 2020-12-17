@@ -11,12 +11,12 @@ namespace Repositories
     public class CidadeRepository
     {
 
-        public Dictionary<Int64, Cidade> ListarCidadesPorEstado(Int64 _idEstado)
+        public Dictionary<int, Cidade> ListarCidadesPorEstado(int _idEstado)
         {
-            Dictionary<Int64, Cidade> mapaCidades = new Dictionary<Int64, Cidade>();
+            Dictionary<int, Cidade> mapaCidades = new Dictionary<int, Cidade>();
             try
             {
-                String SQL = String.Format("SELECT * FROM cidade WHERE estado_id = {0};", _idEstado);
+                String SQL = String.Format("SELECT * FROM cidades WHERE Id_Estado = {0};", _idEstado);
 
                 SqlDataReader data = Conexao.ExecutarSelect(SQL);
 
@@ -24,10 +24,11 @@ namespace Repositories
                 {
                     Cidade cidade = new Cidade();
 
-                    cidade.Id = data.GetInt64(0);
-                    cidade.Descricao = data.GetString(1);
+                    cidade.Id_Cidade = Convert.ToInt32(data["Id_Cidade"]);
+                    cidade.Nome = data["Nome"].ToString();
+                    cidade.Id_Estado = Convert.ToInt32(data["Id_Estado"]);
 
-                    mapaCidades.Add(cidade.Id, cidade);
+                    mapaCidades.Add(cidade.Id_Cidade, cidade);
                 }
 
                 data.Close();

@@ -27,6 +27,7 @@ namespace Repositories
 
                     s.SintomaId = Convert.ToInt32(data["SintomaId"]);
                     s.Nome = data["Nome"].ToString();
+                    s.Descricao = data["Descricao"].ToString();
 
                     mapaSintomas.Add(s.SintomaId, s);
                 }
@@ -57,6 +58,7 @@ namespace Repositories
 
                     s.SintomaId = Convert.ToInt32(data["SintomaId"]);
                     s.Nome = data["Nome"].ToString();
+                    s.Descricao = data["Descricao"].ToString();
                 }
 
                 data.Close();
@@ -76,7 +78,8 @@ namespace Repositories
             try
             {
                 String SQL = String.Format("INSERT INTO sintoma (" +
-                    "nome, descricao) " +
+                    "nome, " +
+                    "descricao) " +
                     "VALUES ('{0}', '{1}')",
                     _obj.Nome.ToString(),
                     _obj.Descricao.ToString()
@@ -126,8 +129,9 @@ namespace Repositories
             try
             {
                 String SQL = String.Format("UPDATE sintoma SET " +
-                    "nome = '{0}' WHERE sintomaId = {1}",
+                    "nome = '{0}', descricao = '{1}' WHERE sintomaId = {2}",
                     _obj.Nome.ToString(),
+                    _obj.Descricao.ToString(),
                     _obj.SintomaId.ToString()
                     );
 

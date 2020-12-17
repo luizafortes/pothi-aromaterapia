@@ -33,7 +33,7 @@ namespace Controllers
                         //return dao.Update((Cidade)_param);
                     */
                     case 'f':
-                        return dao.ListarCidadesPorEstado((Int64)_param);
+                        return dao.ListarCidadesPorEstado((int)_param);
                 }
 
                 return null;

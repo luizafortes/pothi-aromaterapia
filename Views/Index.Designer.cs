@@ -50,6 +50,7 @@ namespace Views
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.relogio = new System.Windows.Forms.Timer(this.components);
             this.labelDadosUsuario = new System.Windows.Forms.Label();
+            this.menuConsultaByImagenmOleo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.rodape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,7 +96,8 @@ namespace Views
             // 
             this.menuOleo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCadastroOleo,
-            this.menuConsultaOleo});
+            this.menuConsultaOleo,
+            this.menuConsultaByImagenmOleo});
             this.menuOleo.Name = "menuOleo";
             this.menuOleo.Size = new System.Drawing.Size(49, 20);
             this.menuOleo.Text = "Óleos";
@@ -103,7 +105,7 @@ namespace Views
             // menuCadastroOleo
             // 
             this.menuCadastroOleo.Name = "menuCadastroOleo";
-            this.menuCadastroOleo.Size = new System.Drawing.Size(125, 22);
+            this.menuCadastroOleo.Size = new System.Drawing.Size(194, 22);
             this.menuCadastroOleo.Text = "Cadastrar";
             this.menuCadastroOleo.ToolTipText = "Cadastrar Óleo";
             this.menuCadastroOleo.Click += new System.EventHandler(this.CadastrarOleo);
@@ -111,7 +113,7 @@ namespace Views
             // menuConsultaOleo
             // 
             this.menuConsultaOleo.Name = "menuConsultaOleo";
-            this.menuConsultaOleo.Size = new System.Drawing.Size(125, 22);
+            this.menuConsultaOleo.Size = new System.Drawing.Size(194, 22);
             this.menuConsultaOleo.Text = "Consultar";
             this.menuConsultaOleo.ToolTipText = "Consultar óleo";
             this.menuConsultaOleo.Click += new System.EventHandler(this.ConsultarOleo);
@@ -151,14 +153,14 @@ namespace Views
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.CadastrarUsuario);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuario);
             // 
@@ -203,6 +205,12 @@ namespace Views
             this.labelDadosUsuario.TabIndex = 4;
             this.labelDadosUsuario.Text = "...";
             this.labelDadosUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // menuConsultaByImagenmOleo
+            // 
+            this.menuConsultaByImagenmOleo.Name = "menuConsultaByImagenmOleo";
+            this.menuConsultaByImagenmOleo.Size = new System.Drawing.Size(194, 22);
+            this.menuConsultaByImagenmOleo.Text = "Consultar por Imagens";
             // 
             // Index
             // 
@@ -250,6 +258,7 @@ namespace Views
         private ToolStripMenuItem consultarToolStripMenuItem1;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
         private ToolStripMenuItem consultarToolStripMenuItem;
+        private ToolStripMenuItem menuConsultaByImagenmOleo;
     }
 }
 

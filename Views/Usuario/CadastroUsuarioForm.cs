@@ -47,7 +47,11 @@ namespace Views.Usuario
             UsuarioModel usuario = new UsuarioModel();
 
             try
-            {                
+            {
+                if (txtUsuarioId.Text != null && txtUsuarioId.Text != "")
+                {
+                    usuario.UsuarioId = Convert.ToInt32(txtUsuarioId.Text);
+                }
                 usuario.Login = txtLogin.Text;
                 usuario.Senha = txtSenha.Text;
                 if (txtPrivilegio.Text == "Master")

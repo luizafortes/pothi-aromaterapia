@@ -138,12 +138,29 @@
     <EmbeddedResource Include="Sintoma\CadastroSintomaForm.resx">
       <DependentUpon>CadastroSintomaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sintoma\ConsultaSintomaForm.resx">
+      <DependentUpon>ConsultaSintomaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\CadastroUsuarioForm.resx">
       <DependentUpon>CadastroUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\ConsultaUsuarioForm.resx">
       <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Index.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Repositories.EstadoRepository.datasource" />
+    <None Include="Properties\DataSources\Views.Login.loginForm.datasource" />
+    <None Include="Properties\DataSources\Views.Oleo.ConsultaOleoForm.datasource" />
+    <None Include="Properties\DataSources\Views.Oleo.OleoCadastroForm.datasource" />
+    <None Include="Properties\DataSources\Views.Pessoa.PessoaCadastroForm.datasource" />
+    <None Include="Properties\DataSources\Views.Pessoa.PessoaConsultaForm.datasource" />
+    <None Include="Properties\DataSources\Views.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Views.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Views.Sintoma.ConsultaSintomaForm.datasource" />
+    <None Include="Properties\DataSources\Views.Sintoma.SintomaCadastroForm.datasource" />
+    <None Include="Properties\DataSources\Views.Usuario.ConsultaUsuarioForm.datasource" />
+    <None Include="Properties\DataSources\Views.Usuario.UsuarioCadastroForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

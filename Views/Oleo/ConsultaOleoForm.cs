@@ -15,16 +15,13 @@ namespace Views.Oleo
     public partial class ConsultaOleoForm : Form
     {
         private Dictionary<int, OleoModel> tabelaOleos;
-
+        private int indice;
         public ConsultaOleoForm()
         {
             InitializeComponent();
+            indice = 0;
         }
 
-        private void buttonSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void OleoConsultaForm_Load(object sender, EventArgs e)
         {
@@ -73,6 +70,7 @@ namespace Views.Oleo
             formOleo.Tag = o;
 
             formOleo.ShowDialog();
+            CarregarGrid("");
         }
 
         private void imDelete_Click(object sender, EventArgs e)
@@ -108,6 +106,40 @@ namespace Views.Oleo
             {
                 MessageBox.Show("ERRO AO FILTRAR O DATA GRID: " + ex.Message);
             }
+        }
+
+        private void btn_left_Click(object sender, EventArgs e)
+        {
+            if (indice > 0)
+                indice--;
+            else
+                indice = this.imageListOleos.Images.Count - 1;
+
+            labelFoto.ImageIndex = indice;
+        }
+
+        private void btn_right_Click(object sender, EventArgs e)
+        {
+            if (indice < this.imageListOleos.Images.Count)
+                indice++;
+            else
+                indice = 0;
+
+
+            labelFoto.ImageIndex = indice;
+        }
+
+        private void buttonNovoOleo_Click(object sender, EventArgs e)
+        {
+            OleoCadastroForm formOleo = new OleoCadastroForm();
+
+            formOleo.ShowDialog();
+            CarregarGrid("");
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

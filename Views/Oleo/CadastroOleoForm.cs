@@ -23,10 +23,10 @@ namespace Views.Oleo
         {
             try
             {
-                OleoModel sintoma = CapturarOleo();
+                OleoModel oleo = CapturarOleo();
                 OleoController control = new OleoController();
 
-                if ((Boolean)control.BD('i', sintoma))
+                if ((Boolean)control.BD('i', oleo))
                 {
                     MessageBox.Show("Cadastro efetuado com sucesso!!!");
                 }
@@ -44,9 +44,12 @@ namespace Views.Oleo
         private OleoModel CapturarOleo()
         {
             OleoModel oleo = new OleoModel();
-            oleo.OleoId = 0;
             try
             {
+                if (txtOleoId.Text != null && txtOleoId.Text != "")
+                {
+                    oleo.OleoId = Convert.ToInt32(txtOleoId.Text);
+                }
                 oleo.Nome = txtNome.Text;
                 oleo.Descricao = txtDescricao.Text;
             }
@@ -111,11 +114,11 @@ namespace Views.Oleo
         {
             try
             {
-                OleoModel o = CapturarOleo();
+                OleoModel oleo = CapturarOleo();
 
                 OleoController control = new OleoController();
 
-                if ((Boolean)control.BD('o', o))
+                if ((Boolean)control.BD('u', oleo))
                 {
                     MessageBox.Show("Cadastro alterado com sucesso!!!");
                 }

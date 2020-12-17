@@ -8,8 +8,8 @@ namespace Entities
 {
     public class Estado
     {
-        public Int64 Id { get; set; }
-
-        public String Descricao { get; set; }
+        public int Id_Estado { get; set; }
+        public String Nome { get; set; }
+        public String Uf { get; set; }
     }
 }

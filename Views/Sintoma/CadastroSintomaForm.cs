@@ -47,7 +47,10 @@ namespace Views.Sintoma
 
             try
             {
-                sintoma.SintomaId = Convert.ToInt32(txtSintomaId.Text);
+                if (txtSintomaId.Text != null && txtSintomaId.Text != "")
+                {
+                    sintoma.SintomaId = Convert.ToInt32(txtSintomaId.Text);
+                }
                 sintoma.Nome = txtNome.Text;
                 sintoma.Descricao = txtDescricao.Text;
             }
@@ -76,8 +79,6 @@ namespace Views.Sintoma
         {
             try
             {
-
-                //CarregarComboEstados();
 
                 if (this.Tag != null)
                 {

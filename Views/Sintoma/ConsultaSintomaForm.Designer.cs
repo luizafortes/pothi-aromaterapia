@@ -39,6 +39,7 @@ namespace Views.Sintoma
             this.buttonSair = new System.Windows.Forms.Button();
             this.menuDeletar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonNovoSintoma = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.menuDeletar.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@ namespace Views.Sintoma
             this.dataGridViewDados.TabIndex = 0;
             this.dataGridViewDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
-            // colUsuarioId
+            // colSintomaId
             // 
             this.colSintomaId.HeaderText = "SintomaId";
             this.colSintomaId.Name = "colSintomaId";
@@ -75,7 +76,7 @@ namespace Views.Sintoma
             this.colNome.ReadOnly = true;
             this.colNome.Width = 200;
             // 
-            // colLogin
+            // colDescricao
             // 
             this.colDescricao.HeaderText = "Descricao";
             this.colDescricao.Name = "colDescricao";
@@ -95,7 +96,7 @@ namespace Views.Sintoma
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(70, 10);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(315, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(463, 20);
             this.txtPesquisa.TabIndex = 2;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txbPesquisa_TextChanged);
             // 
@@ -114,21 +115,32 @@ namespace Views.Sintoma
             this.menuDeletar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.imDelete});
             this.menuDeletar.Name = "contextMenuStrip1";
-            this.menuDeletar.Size = new System.Drawing.Size(181, 48);
+            this.menuDeletar.Size = new System.Drawing.Size(108, 26);
             // 
             // imDelete
             // 
             this.imDelete.Name = "imDelete";
-            this.imDelete.Size = new System.Drawing.Size(180, 22);
+            this.imDelete.Size = new System.Drawing.Size(107, 22);
             this.imDelete.Text = "Delete";
             this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
             // 
-            // PessoaConsultaForm
+            // buttonNovoSintoma
+            // 
+            this.buttonNovoSintoma.Location = new System.Drawing.Point(352, 386);
+            this.buttonNovoSintoma.Name = "buttonNovoSintoma";
+            this.buttonNovoSintoma.Size = new System.Drawing.Size(100, 23);
+            this.buttonNovoSintoma.TabIndex = 4;
+            this.buttonNovoSintoma.Text = "Novo Sintoma";
+            this.buttonNovoSintoma.UseVisualStyleBackColor = true;
+            this.buttonNovoSintoma.Click += new System.EventHandler(this.buttonNovoSintoma_Click);
+            // 
+            // ConsultaSintomaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 414);
             this.ContextMenuStrip = this.menuDeletar;
+            this.Controls.Add(this.buttonNovoSintoma);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.labelPesquisa);
@@ -154,5 +166,6 @@ namespace Views.Sintoma
         public System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.ContextMenuStrip menuDeletar;
         private System.Windows.Forms.ToolStripMenuItem imDelete;
+        private System.Windows.Forms.Button buttonNovoSintoma;
     }
 }

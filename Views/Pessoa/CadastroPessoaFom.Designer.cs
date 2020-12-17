@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dadosPrincipais = new System.Windows.Forms.GroupBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -68,12 +69,16 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelPessoaId = new System.Windows.Forms.Label();
             this.txtPessoaId = new System.Windows.Forms.TextBox();
+            this.estadoRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioCadastroFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dadosPrincipais.SuspendLayout();
             this.dadosAdicionais.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.endereco.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.estadoRepositoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioCadastroFormBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dadosPrincipais
@@ -368,16 +373,12 @@
             // 
             this.comboBoxEstado.BackColor = System.Drawing.SystemColors.Info;
             this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Items.AddRange(new object[] {
-            "Avenida",
-            "Estrada",
-            "Rodovia",
-            "Rua",
-            "Travessa"});
             this.comboBoxEstado.Location = new System.Drawing.Point(267, 77);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(88, 21);
             this.comboBoxEstado.TabIndex = 15;
+            this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
+            this.comboBoxEstado.SelectedValueChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
             // labelEstado
             // 
@@ -392,12 +393,6 @@
             // 
             this.comboBoxCidade.BackColor = System.Drawing.SystemColors.Info;
             this.comboBoxCidade.FormattingEnabled = true;
-            this.comboBoxCidade.Items.AddRange(new object[] {
-            "Avenida",
-            "Estrada",
-            "Rodovia",
-            "Rua",
-            "Travessa"});
             this.comboBoxCidade.Location = new System.Drawing.Point(173, 77);
             this.comboBoxCidade.Name = "comboBoxCidade";
             this.comboBoxCidade.Size = new System.Drawing.Size(88, 21);
@@ -504,6 +499,14 @@
             this.txtPessoaId.Size = new System.Drawing.Size(74, 13);
             this.txtPessoaId.TabIndex = 16;
             // 
+            // estadoRepositoryBindingSource
+            // 
+            this.estadoRepositoryBindingSource.DataSource = typeof(Repositories.EstadoRepository);
+            // 
+            // usuarioCadastroFormBindingSource
+            // 
+            this.usuarioCadastroFormBindingSource.DataSource = typeof(Views.Usuario.UsuarioCadastroForm);
+            // 
             // PessoaCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +535,8 @@
             this.groupBox1.PerformLayout();
             this.endereco.ResumeLayout(false);
             this.endereco.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.estadoRepositoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioCadastroFormBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,5 +584,7 @@
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Label labelPessoaId;
         private System.Windows.Forms.TextBox txtPessoaId;
+        private System.Windows.Forms.BindingSource estadoRepositoryBindingSource;
+        private System.Windows.Forms.BindingSource usuarioCadastroFormBindingSource;
     }
 }

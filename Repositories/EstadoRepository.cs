@@ -11,12 +11,12 @@ namespace Repositories
     public class EstadoRepository
     {
 
-        public Dictionary<Int64, Estado> GetAll()
+        public Dictionary<int, Estado> GetAll()
         {
-            Dictionary<Int64, Estado> mapaEstados = new Dictionary<Int64, Estado>();
+            Dictionary<int, Estado> mapaEstados = new Dictionary<int, Estado>();
             try
             {
-                String SQL = "SELECT * FROM estado;";
+                String SQL = "SELECT * FROM estados;";
 
                 SqlDataReader data = Conexao.ExecutarSelect(SQL);
 
@@ -24,10 +24,10 @@ namespace Repositories
                 {
                     Estado estado = new Estado();
 
-                    estado.Id = data.GetInt64(0);
-                    estado.Descricao = data.GetString(1);
+                    estado.Id_Estado = Convert.ToInt32(data["Id_Estado"]);
+                    estado.Nome = data["Nome"].ToString();
 
-                    mapaEstados.Add(estado.Id, estado);
+                    mapaEstados.Add(estado.Id_Estado, estado);
                 }
 
                 data.Close();

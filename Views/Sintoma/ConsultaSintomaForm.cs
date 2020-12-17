@@ -73,6 +73,7 @@ namespace Views.Sintoma
             formSintoma.Tag = s;
 
             formSintoma.ShowDialog();
+            CarregarGrid("");
         }
 
         private void imDelete_Click(object sender, EventArgs e)
@@ -108,6 +109,15 @@ namespace Views.Sintoma
             {
                 MessageBox.Show("ERRO AO FILTRAR O DATA GRID: " + ex.Message);
             }
+        }
+
+        private void buttonNovoSintoma_Click(object sender, EventArgs e)
+        {
+            SintomaCadastroForm formSintoma = new SintomaCadastroForm();
+
+            formSintoma.ShowDialog();
+            CarregarGrid("");
+
         }
     }
 }

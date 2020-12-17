@@ -26,7 +26,10 @@ namespace Views.Pessoa
 
             try
             {
-                pessoa.PessoaId = Convert.ToInt32(txtPessoaId.Text);
+                if (txtPessoaId.Text != null && txtPessoaId.Text != "")
+                {
+                    pessoa.PessoaId = Convert.ToInt32(txtPessoaId.Text);
+                }
                 pessoa.Cpf = Convert.ToInt64(txtCPF.Text.Replace(".", "").Replace("-", ""));
                 pessoa.Nome = txtNome.Text;
                 pessoa.Tel = txtTel.Text;
@@ -36,8 +39,8 @@ namespace Views.Pessoa
                 //pessoa.Endereco.Logradouro = txtLogradouro.Text;
                 //pessoa.Endereco.Complemento = txtComplemento.Text;
                 //pessoa.Endereco.Cep = txtCEP.Text;
-                //pessoa.Endereco.Cidade = comboBoxCidade.SelectedIndex;
-                //pessoa.Endereco.Estado = comboBoxEstado.SelectedIndex;
+                pessoa.Endereco.Cidade = Convert.ToInt32(comboBoxCidade.SelectedValue);
+                pessoa.Endereco.Estado = Convert.ToInt32(comboBoxEstado.SelectedValue);
 
                 //pessoa.Sexo = rdbFeminino.Checked ? Sexo.Feminino : Sexo.Masculino;
                 //pessoa.EstadoCivil = rdbSolteiro.Checked ? EstadoCivil.Solteiro : (rdbCasado.Checked ? EstadoCivil.Casado : (rdbDivorciado.Checked ? EstadoCivil.Divorciado : (EstadoCivil.Viuvo)));
@@ -91,7 +94,7 @@ namespace Views.Pessoa
             try
             {
 
-                //CarregarComboEstados();
+                CarregarComboEstados();
 
                 if (this.Tag != null)
                 {
@@ -122,12 +125,13 @@ namespace Views.Pessoa
             {
                 EstadoController controlEstado = new EstadoController();
 
-                Dictionary<Int64, Estado> mapaEstados = (Dictionary<Int64, Estado>)controlEstado.BD('t', null);
+                Dictionary<int, Estado> mapaEstados = (Dictionary<int, Estado>)controlEstado.BD('t', null);
 
-                comboBoxEstado.DisplayMember = "descricao";
-                comboBoxEstado.ValueMember = "id";
-
+                comboBoxEstado.DisplayMember = "Nome";
+                comboBoxEstado.ValueMember = "Id_Estado";
+                                
                 comboBoxEstado.DataSource = mapaEstados.Values.ToList<Estado>();
+                
             }
             catch (Exception ex)
             {
@@ -136,22 +140,22 @@ namespace Views.Pessoa
         }
         
         private void CarregarComboCidade()
-        {/*
+        {
             try
             {
-                CidadeCtrl controlCidade = new CidadeCtrl();
+                CidadeController controlCidade = new CidadeController();
 
-                Dictionary<Int64, Cidade> mapaCidades = (Dictionary<Int64, Cidade>)controlCidade.BD('t', null);
+                Dictionary<int, Cidade> mapaCidades = (Dictionary<int, Cidade>)controlCidade.BD('t', null);
 
-                comboBox.DisplayMember = "descricao";
-                comboBox.ValueMember = "id";
+                comboBoxCidade.DisplayMember = "Nome";
+                comboBoxCidade.ValueMember = "Id_Cidade";
 
-                comboBox.DataSource = mapaCidades.Values.ToList<Cidade>();
+                comboBoxCidade.DataSource = mapaCidades.Values.ToList<Cidade>();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERRO AO CARREGAR COMBO DE CIDADES: " + ex.Message);
-            }*/
+            }
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -206,16 +210,21 @@ namespace Views.Pessoa
 
         private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int idEstado = 0;
             try
             {
-                Int64 idEstado = (Int64)comboBoxEstado.SelectedValue;
+                if (!String.IsNullOrEmpty(comboBoxEstado.SelectedIndex.ToString()))
+                {
+                    idEstado = Convert.ToInt32(comboBoxEstado.SelectedValue);
+                }
+                
 
                 CidadeController controlCidade = new CidadeController();
 
-                Dictionary<Int64, Cidade> mapaCidades = (Dictionary<Int64, Cidade>)controlCidade.BD('f', idEstado);
+                Dictionary<int, Cidade> mapaCidades = (Dictionary<int, Cidade>)controlCidade.BD('f', idEstado);
 
-                comboBoxCidade.DisplayMember = "descricao";
-                comboBoxCidade.ValueMember = "id";
+                comboBoxCidade.DisplayMember = "Nome";
+                comboBoxCidade.ValueMember = "Id_Cidade";
 
                 comboBoxCidade.DataSource = mapaCidades.Values.ToList<Cidade>();
             }
