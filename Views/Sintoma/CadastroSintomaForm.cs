@@ -24,7 +24,7 @@ namespace Views.Sintoma
             try
             {
                 SintomaModel sintoma = CapturarSintoma();
-                PessoaController control = new PessoaController();
+                SintomaController control = new SintomaController();
 
                 if ((Boolean)control.BD('i', sintoma))
                 {
@@ -49,6 +49,7 @@ namespace Views.Sintoma
             {
                 sintoma.SintomaId = Convert.ToInt32(txtSintomaId.Text);
                 sintoma.Nome = txtNome.Text;
+                sintoma.Descricao = txtDescricao.Text;
             }
             catch (Exception ex)
             {
@@ -63,6 +64,7 @@ namespace Views.Sintoma
             {
                 txtSintomaId.Text = _sintoma.SintomaId.ToString();
                 txtNome.Text = _sintoma.Nome;
+                txtDescricao.Text = _sintoma.Descricao;
             }
             catch (Exception ex)
             {
@@ -103,14 +105,16 @@ namespace Views.Sintoma
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
+            ConsultaSintomaForm consulta = new ConsultaSintomaForm();
             try
             {
                 SintomaModel s = CapturarSintoma();
 
                 SintomaController control = new SintomaController();
 
-                if ((Boolean)control.BD('s', s))
+                if ((Boolean)control.BD('u', s))
                 {
+                    
                     MessageBox.Show("Cadastro alterado com sucesso!!!");
                 }
                 else
@@ -121,6 +125,10 @@ namespace Views.Sintoma
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                consulta.CarregarGrid("");
             }
         }
     }

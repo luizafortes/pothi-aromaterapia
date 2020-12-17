@@ -31,15 +31,13 @@ namespace Views.Usuario
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewDados = new System.Windows.Forms.DataGridView();
-            this.colUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPesquisa = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.buttonSair = new System.Windows.Forms.Button();
             this.menuDeletar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.colUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.menuDeletar.SuspendLayout();
             this.SuspendLayout();
@@ -50,18 +48,57 @@ namespace Views.Usuario
             this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsuarioId,
-            this.colLogin,
-            this.colNome,
-            this.colEmail});
+            this.colLogin});
             this.dataGridViewDados.Location = new System.Drawing.Point(12, 36);
             this.dataGridViewDados.MultiSelect = false;
             this.dataGridViewDados.Name = "dataGridViewDados";
             this.dataGridViewDados.ReadOnly = true;
             this.dataGridViewDados.RowHeadersVisible = false;
             this.dataGridViewDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDados.Size = new System.Drawing.Size(521, 344);
+            this.dataGridViewDados.Size = new System.Drawing.Size(144, 344);
             this.dataGridViewDados.TabIndex = 0;
             this.dataGridViewDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
+            // 
+            // labelPesquisa
+            // 
+            this.labelPesquisa.AutoSize = true;
+            this.labelPesquisa.Location = new System.Drawing.Point(14, 14);
+            this.labelPesquisa.Name = "labelPesquisa";
+            this.labelPesquisa.Size = new System.Drawing.Size(50, 13);
+            this.labelPesquisa.TabIndex = 1;
+            this.labelPesquisa.Text = "Pesquisa";
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(70, 10);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(86, 20);
+            this.txtPesquisa.TabIndex = 2;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txbPesquisa_TextChanged);
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Location = new System.Drawing.Point(81, 386);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 3;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // menuDeletar
+            // 
+            this.menuDeletar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imDelete});
+            this.menuDeletar.Name = "contextMenuStrip1";
+            this.menuDeletar.Size = new System.Drawing.Size(108, 26);
+            // 
+            // imDelete
+            // 
+            this.imDelete.Name = "imDelete";
+            this.imDelete.Size = new System.Drawing.Size(107, 22);
+            this.imDelete.Text = "Delete";
+            this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
             // 
             // colUsuarioId
             // 
@@ -77,66 +114,11 @@ namespace Views.Usuario
             this.colLogin.ReadOnly = true;
             this.colLogin.Width = 80;
             // 
-            // colNome
-            // 
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            this.colNome.Width = 190;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "E-mail";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            this.colEmail.Width = 190;
-            // 
-            // labelPesquisa
-            // 
-            this.labelPesquisa.AutoSize = true;
-            this.labelPesquisa.Location = new System.Drawing.Point(14, 14);
-            this.labelPesquisa.Name = "labelPesquisa";
-            this.labelPesquisa.Size = new System.Drawing.Size(50, 13);
-            this.labelPesquisa.TabIndex = 1;
-            this.labelPesquisa.Text = "Pesquisa";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(70, 10);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(315, 20);
-            this.txtPesquisa.TabIndex = 2;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txbPesquisa_TextChanged);
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Location = new System.Drawing.Point(458, 386);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 3;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // menuDeletar
-            // 
-            this.menuDeletar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imDelete});
-            this.menuDeletar.Name = "contextMenuStrip1";
-            this.menuDeletar.Size = new System.Drawing.Size(181, 48);
-            // 
-            // imDelete
-            // 
-            this.imDelete.Name = "imDelete";
-            this.imDelete.Size = new System.Drawing.Size(180, 22);
-            this.imDelete.Text = "Delete";
-            this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
-            // 
-            // PessoaConsultaForm
+            // ConsultaUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 414);
+            this.ClientSize = new System.Drawing.Size(169, 414);
             this.ContextMenuStrip = this.menuDeletar;
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.txtPesquisa);
@@ -154,15 +136,13 @@ namespace Views.Usuario
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuarioId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLogin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.Label labelPesquisa;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button buttonSair;
         public System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.ContextMenuStrip menuDeletar;
         private System.Windows.Forms.ToolStripMenuItem imDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuarioId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLogin;
     }
 }

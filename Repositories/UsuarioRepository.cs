@@ -13,9 +13,9 @@ namespace Repositories
 
         #region "Operações com Banco de Dados"
 
-        public Dictionary<Int64, UsuarioModel> GetAll()
+        public Dictionary<Int32, UsuarioModel> GetAll()
         {
-            Dictionary<Int64, UsuarioModel> mapaUsuarios = new Dictionary<Int64, UsuarioModel>();
+            Dictionary<Int32, UsuarioModel> mapaUsuarios = new Dictionary<Int32, UsuarioModel>();
             try
             {
                 String SQL = "SELECT * FROM usuario;";
@@ -25,11 +25,9 @@ namespace Repositories
                 while (data.Read())
                 {
                     UsuarioModel u = new UsuarioModel();
-
+                    u.UsuarioId = Convert.ToInt32(data["UsuarioId"]);
                     u.Login = data["Login"].ToString();
                     u.Senha = data["Senha"].ToString();
-                    u.Nome = data["Nome"].ToString();
-                    u.Email = data["Email"].ToString();
 
                     mapaUsuarios.Add(u.UsuarioId, u);
                 }
@@ -82,14 +80,10 @@ namespace Repositories
             {
                 String SQL = String.Format("INSERT INTO usuario (" +
                     "login, " +
-                    "senha, " +
-                    "nome, " +
-                    "email) " +
-                    "VALUES ({0}, '{1}', '{2}', '{3}')",
+                    "senha) " +
+                    "VALUES ('{0}', '{1}')",
                     _obj.Login.ToString(),
-                    _obj.Nome.ToString(),
-                    _obj.Senha.ToString(),
-                    _obj.Email.ToString()
+                    _obj.Senha.ToString()
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);

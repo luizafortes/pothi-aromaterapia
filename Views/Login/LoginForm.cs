@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
@@ -25,20 +26,31 @@ namespace Views.Login
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
+            progressBar1.Value = 0;
+            progressBar1.Visible = true;
+            for (int i = 0; i <= progressBar1.Maximum; i++)
+            {
+                progressBar1.Value = i++;
+                Thread.Sleep(50);
+            }
             UsuarioModel user = new UsuarioModel();
             user.Login = txtUsuario.Text;
             user.Senha = txtSenha.Text;
-            if (ValidarLogin(user))
+            if (progressBar1.Value == progressBar1.Maximum)
             {
-                this.DialogResult = DialogResult.OK;
-
-                this.Tag = user;
-                this.Close();
+                if (ValidarLogin(user))
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Tag = user;
+                    this.Close();
+                }
+                else
+                {
+                    labelLoginError.Visible = true;
+                }
             }
-            else
-            {
-                labelLoginError.Visible = true;
-            }
+            
         }
 
 

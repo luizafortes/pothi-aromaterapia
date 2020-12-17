@@ -114,6 +114,9 @@
     <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Oleo\ConsultaOleoForm.resx">
+      <DependentUpon>ConsultaOleoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pessoa\CadastroPessoaFom.resx">
       <DependentUpon>CadastroPessoaFom.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\CadastroUsuarioForm.resx">
       <DependentUpon>CadastroUsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\ConsultaUsuarioForm.resx">
+      <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

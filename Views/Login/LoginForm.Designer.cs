@@ -36,6 +36,7 @@
             this.labelUsuario = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,11 +119,20 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(29, 212);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(237, 23);
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Visible = false;
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 209);
+            this.ClientSize = new System.Drawing.Size(290, 247);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.groupBoxLogin);
             this.Controls.Add(this.buttonLogin);
@@ -147,5 +157,6 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelLoginError;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

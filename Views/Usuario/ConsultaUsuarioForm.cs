@@ -53,7 +53,7 @@ namespace Views.Usuario
 
                 foreach (UsuarioModel u in tabelaUsuarios.Values)
                 {
-                    dataGridViewDados.Rows.Add(u.Cpf, u.Nome, u.Email);
+                    dataGridViewDados.Rows.Add(u.UsuarioId, u.Login);
                 }
             }
             catch (Exception ex)

@@ -26,12 +26,12 @@ namespace Views.Sintoma
             this.Close();
         }
 
-        private void SintomaConsultaForm_Load(object sender, EventArgs e)
+        public void SintomaConsultaForm_Load(object sender, EventArgs e)
         {
             CarregarGrid("");
         }
 
-        private void CarregarGrid(string _filtro)
+        public void CarregarGrid(string _filtro)
         {
             try
             {

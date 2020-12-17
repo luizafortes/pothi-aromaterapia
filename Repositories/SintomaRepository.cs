@@ -76,9 +76,10 @@ namespace Repositories
             try
             {
                 String SQL = String.Format("INSERT INTO sintoma (" +
-                    "nome) " +
-                    "VALUES ('{0}')",
-                    _obj.Nome.ToString()
+                    "nome, descricao) " +
+                    "VALUES ('{0}', '{1}')",
+                    _obj.Nome.ToString(),
+                    _obj.Descricao.ToString()
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);

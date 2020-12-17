@@ -24,7 +24,7 @@ namespace Views.Usuario
             try
             {
                 UsuarioModel usuario = CapturarUsuario();
-                PessoaController control = new PessoaController();
+                UsuarioController control = new UsuarioController();
 
                 if ((Boolean)control.BD('i', usuario))
                 {
@@ -37,7 +37,7 @@ namespace Views.Usuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRO ao inserir Pessoa.", ex.Message);
+                MessageBox.Show("ERRO ao inserir Usuario.", ex.Message);
             }
         }
 
@@ -62,11 +62,9 @@ namespace Views.Usuario
         private void CarregarUsuarioForm(UsuarioModel _usuario)
         {
             try
-            {
-                txtLogin.Text = _usuario.Login.ToString();
+            {                
+                txtLogin.Text = _usuario.Login;
                 txtSenha.Text = _usuario.Senha;
-                txtNome.Text = _usuario.Nome;
-                txtEmail.Text = _usuario.Email;
             }
             catch (Exception ex)
             {

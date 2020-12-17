@@ -39,6 +39,8 @@ namespace Views.Oleo
             this.buttonSair = new System.Windows.Forms.Button();
             this.menuDeletar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageListOleos = new System.Windows.Forms.ImageList(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.menuDeletar.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +63,7 @@ namespace Views.Oleo
             this.dataGridViewDados.TabIndex = 0;
             this.dataGridViewDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
-            // colUsuarioId
+            // colOleoId
             // 
             this.colOleoId.HeaderText = "OleoId";
             this.colOleoId.Name = "colOleoId";
@@ -75,7 +77,7 @@ namespace Views.Oleo
             this.colNome.ReadOnly = true;
             this.colNome.Width = 200;
             // 
-            // colLogin
+            // colDescricao
             // 
             this.colDescricao.HeaderText = "Descricao";
             this.colDescricao.Name = "colDescricao";
@@ -101,6 +103,7 @@ namespace Views.Oleo
             // 
             // buttonSair
             // 
+            this.buttonSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonSair.Location = new System.Drawing.Point(458, 386);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -114,19 +117,26 @@ namespace Views.Oleo
             this.menuDeletar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.imDelete});
             this.menuDeletar.Name = "contextMenuStrip1";
-            this.menuDeletar.Size = new System.Drawing.Size(181, 48);
+            this.menuDeletar.Size = new System.Drawing.Size(108, 26);
             // 
             // imDelete
             // 
             this.imDelete.Name = "imDelete";
-            this.imDelete.Size = new System.Drawing.Size(180, 22);
+            this.imDelete.Size = new System.Drawing.Size(107, 22);
             this.imDelete.Text = "Delete";
             this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
             // 
-            // PessoaConsultaForm
+            // imageListOleos
+            // 
+            this.imageListOleos.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageListOleos.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListOleos.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // ConsultaOleoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonSair;
             this.ClientSize = new System.Drawing.Size(545, 414);
             this.ContextMenuStrip = this.menuDeletar;
             this.Controls.Add(this.buttonSair);
@@ -154,5 +164,7 @@ namespace Views.Oleo
         public System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.ContextMenuStrip menuDeletar;
         private System.Windows.Forms.ToolStripMenuItem imDelete;
+        private System.Windows.Forms.ImageList imageListOleos;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

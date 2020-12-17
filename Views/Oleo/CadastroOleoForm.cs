@@ -24,7 +24,7 @@ namespace Views.Oleo
             try
             {
                 OleoModel sintoma = CapturarOleo();
-                PessoaController control = new PessoaController();
+                OleoController control = new OleoController();
 
                 if ((Boolean)control.BD('i', sintoma))
                 {
@@ -43,18 +43,18 @@ namespace Views.Oleo
 
         private OleoModel CapturarOleo()
         {
-            OleoModel sintoma = new OleoModel();
-
+            OleoModel oleo = new OleoModel();
+            oleo.OleoId = 0;
             try
             {
-                sintoma.OleoId = Convert.ToInt32(txtOleoId.Text);
-                sintoma.Nome = txtNome.Text;
+                oleo.Nome = txtNome.Text;
+                oleo.Descricao = txtDescricao.Text;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERRO ao capturar dados do Oleo.", ex.Message);
             }
-            return sintoma;
+            return oleo;
         }
 
         private void CarregarOleoForm(OleoModel _oleo)
