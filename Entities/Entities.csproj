@@ -44,6 +44,7 @@
     <Compile Include="Cidade.cs" />
     <Compile Include="EnderecoModel.cs" />
     <Compile Include="Enums\EstadoCivil.cs" />
+    <Compile Include="Enums\Privilegio.cs" />
     <Compile Include="Enums\Sexo.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Interfaces\Controllers\IBaseController.cs" />

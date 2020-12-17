@@ -20,34 +20,13 @@ namespace Views.Pessoa
             InitializeComponent();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PessoaModel pessoa = CapturarPessoa();
-                PessoaController control = new PessoaController();
-
-                if ((Boolean)control.BD('i', pessoa))
-                {
-                    MessageBox.Show("Cadastro efetuado com sucesso!!!");
-                }
-                else
-                {
-                    MessageBox.Show("Cadastro NÃO efetuado!!!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERRO ao inserir Pessoa.", ex.Message);
-            }
-        }
-
         private PessoaModel CapturarPessoa()
         {
             PessoaModel pessoa = new PessoaModel();
 
             try
             {
+                pessoa.PessoaId = Convert.ToInt32(txtPessoaId.Text);
                 pessoa.Cpf = Convert.ToInt64(txtCPF.Text.Replace(".", "").Replace("-", ""));
                 pessoa.Nome = txtNome.Text;
                 pessoa.Tel = txtTel.Text;
@@ -78,6 +57,7 @@ namespace Views.Pessoa
         {
             try
             {
+                txtPessoaId.Text = _pessoa.PessoaId.ToString();
                 txtCPF.Text = _pessoa.Cpf.ToString();
                 txtNome.Text = _pessoa.Nome;
                 txtTel.Text = _pessoa.Tel;
@@ -116,14 +96,18 @@ namespace Views.Pessoa
                 if (this.Tag != null)
                 {
                     buttonAlterar.Visible = true;
-
+                    this.Text = "Edição de Pessoa";
                     buttonSalvar.Visible = false;
 
-                    txtCPF.Enabled = false;
+                    txtPessoaId.Enabled = false;
 
                     PessoaModel p = (PessoaModel)this.Tag;
 
                     CarregarPessoaForm(p);
+                }
+                else
+                {
+                    this.Text = "Cadastro de Pessoa";
                 }
             }
             catch (Exception ex)
@@ -150,10 +134,9 @@ namespace Views.Pessoa
                 MessageBox.Show("ERRO AO CARREGAR COMBO DE ESTADOS: " + ex.Message);
             }
         }
-
-        /*
+        
         private void CarregarComboCidade()
-        {
+        {/*
             try
             {
                 CidadeCtrl controlCidade = new CidadeCtrl();
@@ -168,9 +151,30 @@ namespace Views.Pessoa
             catch (Exception ex)
             {
                 MessageBox.Show("ERRO AO CARREGAR COMBO DE CIDADES: " + ex.Message);
+            }*/
+        }
+        
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PessoaModel pessoa = CapturarPessoa();
+                PessoaController control = new PessoaController();
+
+                if ((Boolean)control.BD('i', pessoa))
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("Cadastro NÃO efetuado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO ao inserir Pessoa.", ex.Message);
             }
         }
-        */
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

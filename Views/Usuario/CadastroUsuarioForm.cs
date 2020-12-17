@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controllers;
 using Entities;
+using Entities.Enums;
 
 namespace Views.Usuario
 {
@@ -46,11 +47,23 @@ namespace Views.Usuario
             UsuarioModel usuario = new UsuarioModel();
 
             try
-            {
+            {                
                 usuario.Login = txtLogin.Text;
                 usuario.Senha = txtSenha.Text;
-                usuario.Nome = txtNome.Text;
-                usuario.Email = txtEmail.Text;
+                if (txtPrivilegio.Text == "Master")
+                {
+                    usuario.PrivilegioId = Convert.ToInt32(Privilegio.Master);
+                }
+                else if (txtPrivilegio.Text == "Normal")
+                {
+                    usuario.PrivilegioId = Convert.ToInt32(Privilegio.Normal);
+                }
+                else if (txtPrivilegio.Text == "Administrador")
+                {
+                    usuario.PrivilegioId = Convert.ToInt32(Privilegio.Administrador);
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -62,9 +75,25 @@ namespace Views.Usuario
         private void CarregarUsuarioForm(UsuarioModel _usuario)
         {
             try
-            {                
+            {
+                
                 txtLogin.Text = _usuario.Login;
                 txtSenha.Text = _usuario.Senha;
+                switch (_usuario.PrivilegioId)
+                {
+                    case 1:
+                        txtPrivilegio.Text = "Master";                        
+                        break;
+                    case 2:
+                        txtPrivilegio.Text = "Normal";
+                        break;
+                    case 3:
+                        txtPrivilegio.Text = "Administrador";
+                        break;
+                    default:
+                        txtPrivilegio.Text = "Normal";
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -82,6 +111,7 @@ namespace Views.Usuario
                 if (this.Tag != null)
                 {
                     buttonAlterar.Visible = true;
+                    this.Text = "Edição de Usuário";
 
                     buttonSalvar.Visible = false;
 
@@ -90,6 +120,10 @@ namespace Views.Usuario
                     UsuarioModel u = (UsuarioModel)this.Tag;
 
                     CarregarUsuarioForm(u);
+                }
+                else
+                {
+                    this.Text = "Cadastro de Usuário";
                 }
             }
             catch (Exception ex)

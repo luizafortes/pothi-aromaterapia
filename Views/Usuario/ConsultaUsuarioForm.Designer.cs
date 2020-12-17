@@ -31,13 +31,14 @@ namespace Views.Usuario
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewDados = new System.Windows.Forms.DataGridView();
+            this.colUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrivilegio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPesquisa = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.buttonSair = new System.Windows.Forms.Button();
             this.menuDeletar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.colUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.menuDeletar.SuspendLayout();
             this.SuspendLayout();
@@ -48,16 +49,38 @@ namespace Views.Usuario
             this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsuarioId,
-            this.colLogin});
+            this.colLogin,
+            this.colPrivilegio});
             this.dataGridViewDados.Location = new System.Drawing.Point(12, 36);
             this.dataGridViewDados.MultiSelect = false;
             this.dataGridViewDados.Name = "dataGridViewDados";
             this.dataGridViewDados.ReadOnly = true;
             this.dataGridViewDados.RowHeadersVisible = false;
             this.dataGridViewDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDados.Size = new System.Drawing.Size(144, 344);
+            this.dataGridViewDados.Size = new System.Drawing.Size(243, 344);
             this.dataGridViewDados.TabIndex = 0;
             this.dataGridViewDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
+            // 
+            // colUsuarioId
+            // 
+            this.colUsuarioId.HeaderText = "UsuarioId";
+            this.colUsuarioId.Name = "colUsuarioId";
+            this.colUsuarioId.ReadOnly = true;
+            this.colUsuarioId.Width = 60;
+            // 
+            // colLogin
+            // 
+            this.colLogin.HeaderText = "Login";
+            this.colLogin.Name = "colLogin";
+            this.colLogin.ReadOnly = true;
+            this.colLogin.Width = 80;
+            // 
+            // colPrivilegio
+            // 
+            this.colPrivilegio.DataPropertyName = "colPrivilegio";
+            this.colPrivilegio.HeaderText = "Privilégio";
+            this.colPrivilegio.Name = "colPrivilegio";
+            this.colPrivilegio.ReadOnly = true;
             // 
             // labelPesquisa
             // 
@@ -72,13 +95,13 @@ namespace Views.Usuario
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(70, 10);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(86, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(185, 20);
             this.txtPesquisa.TabIndex = 2;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txbPesquisa_TextChanged);
             // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(81, 386);
+            this.buttonSair.Location = new System.Drawing.Point(180, 386);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 3;
@@ -100,25 +123,11 @@ namespace Views.Usuario
             this.imDelete.Text = "Delete";
             this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
             // 
-            // colUsuarioId
-            // 
-            this.colUsuarioId.HeaderText = "UsuarioId";
-            this.colUsuarioId.Name = "colUsuarioId";
-            this.colUsuarioId.ReadOnly = true;
-            this.colUsuarioId.Width = 60;
-            // 
-            // colLogin
-            // 
-            this.colLogin.HeaderText = "Login";
-            this.colLogin.Name = "colLogin";
-            this.colLogin.ReadOnly = true;
-            this.colLogin.Width = 80;
-            // 
             // ConsultaUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(169, 414);
+            this.ClientSize = new System.Drawing.Size(267, 414);
             this.ContextMenuStrip = this.menuDeletar;
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.txtPesquisa);
@@ -144,5 +153,6 @@ namespace Views.Usuario
         private System.Windows.Forms.ToolStripMenuItem imDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuarioId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLogin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrivilegio;
     }
 }

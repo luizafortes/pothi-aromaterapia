@@ -16,9 +16,9 @@ namespace Repositories
 
         #region "Operações com Banco de Dados"
 
-        public Dictionary<Int64, PessoaModel> GetAll()
+        public Dictionary<Int32, PessoaModel> GetAll()
         {
-            Dictionary<Int64, PessoaModel> mapaPessoas = new Dictionary<Int64, PessoaModel>();
+            Dictionary<Int32, PessoaModel> mapaPessoas = new Dictionary<Int32, PessoaModel>();
             try
             {
                 String SQL = "SELECT * FROM pessoa;";
@@ -29,6 +29,7 @@ namespace Repositories
                 {
                     PessoaModel p = new PessoaModel();
 
+                    p.PessoaId = Convert.ToInt32(data["PessoaId"]);
                     p.Cpf = Convert.ToInt64(data["Cpf"]);
                     p.Nome = data["Nome"].ToString();
                     p.Tel = data["Tel"].ToString();
@@ -45,7 +46,7 @@ namespace Repositories
                     //p.Endereco.Cidade = data.GetInt32(6);
                     //p.Endereco.Estado = data.GetInt32(7);
 
-                    mapaPessoas.Add(p.Cpf, p);
+                    mapaPessoas.Add(p.PessoaId, p);
                 }
 
                 data.Close();
@@ -59,12 +60,12 @@ namespace Repositories
             return mapaPessoas;
         }
 
-        public PessoaModel GetForID(Int64 _cpf)
+        public PessoaModel GetForID(Int32 _pessoaId)
         {
             PessoaModel p = null;
             try
             {
-                String SQL = String.Format("SELECT * FROM pessoa WHERE cpf = {0};", _cpf);
+                String SQL = String.Format("SELECT * FROM pessoa WHERE pessoaId = {0};", _pessoaId);
 
                 SqlDataReader data = Conexao.ExecutarSelect(SQL);
 
@@ -72,6 +73,7 @@ namespace Repositories
                 {
                     p = new PessoaModel();
 
+                    p.PessoaId = Convert.ToInt32(data["PessoaId"]);
                     p.Cpf = Convert.ToInt64(data["Cpf"]);
                     p.Nome = data["Nome"].ToString();
                     p.Tel = data["Tel"].ToString();
@@ -133,12 +135,12 @@ namespace Repositories
 
         }
 
-        public Boolean Delete(Int64 _cpf)
+        public Boolean Delete(Int32 _pessoaId)
         {
             Boolean resultado = false;
             try
             {
-                String SQL = "DELETE FROM pessoa WHERE cpf = " + _cpf.ToString();
+                String SQL = "DELETE FROM pessoa WHERE pessoaId = " + _pessoaId.ToString();
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);
 
@@ -162,18 +164,20 @@ namespace Repositories
             {
                 String SQL = String.Format("UPDATE pessoa SET " +
                     "nome = '{0}', " +
-                    "tel = '{1}', " +
-                    "email = '{2}', " +
-                    "filhos = '{3}', " +
-                    "animais = '{4}', " +
-                    "fumante = '{5}' WHERE cpf = {6}",
+                    "cpf = '{1}', " +
+                    "tel = '{2}', " +
+                    "email = '{3}', " +
+                    "filhos = '{4}', " +
+                    "animais = '{5}', " +
+                    "fumante = '{6}' WHERE PessoaId = {7}",
                     _obj.Nome,
+                    _obj.Cpf.ToString(),
                     _obj.Tel,
                     _obj.Email,
                     _obj.Filhos,
                     _obj.Animais,
                     _obj.Fumante,
-                    _obj.Cpf
+                    _obj.PessoaId
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);

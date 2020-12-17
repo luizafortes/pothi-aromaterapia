@@ -28,6 +28,7 @@ namespace Repositories
                     u.UsuarioId = Convert.ToInt32(data["UsuarioId"]);
                     u.Login = data["Login"].ToString();
                     u.Senha = data["Senha"].ToString();
+                    u.PrivilegioId = Convert.ToInt32(data["PrivilegioId"]);
 
                     mapaUsuarios.Add(u.UsuarioId, u);
                 }
@@ -56,10 +57,10 @@ namespace Repositories
                 {
                     u = new UsuarioModel();
 
-                    u.UsuarioId = Convert.ToInt32(data["usuarioId"]);
-                    u.Nome = data["Nome"].ToString();
-                    u.Tel = data["Tel"].ToString();
-                    u.Email = data["Email"].ToString();
+                    u.UsuarioId = Convert.ToInt32(data["UsuarioId"]);
+                    u.Login = data["Login"].ToString();
+                    u.Senha = data["Senha"].ToString();
+                    u.PrivilegioId = Convert.ToInt32(data["PrivilegioId"]);
                 }
 
                 data.Close();
@@ -73,6 +74,30 @@ namespace Repositories
             return u;
         }
 
+        public Boolean GetForLogin(UsuarioModel _obj)
+        {
+            Boolean resultado = false;
+            try
+            {
+                String SQL = String.Format("SELECT * FROM usuario WHERE login = '{0}' and senha = '{1}';", _obj.Login, _obj.Senha);
+
+                SqlDataReader data = Conexao.ExecutarSelect(SQL);
+
+                if (data.HasRows)
+                {
+                    resultado = true;
+                }
+
+                data.Close();
+                Conexao.FecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return resultado;
+        }
+
         public Boolean Insert(UsuarioModel _obj)
         {
             Boolean resultado = false;
@@ -80,10 +105,12 @@ namespace Repositories
             {
                 String SQL = String.Format("INSERT INTO usuario (" +
                     "login, " +
-                    "senha) " +
-                    "VALUES ('{0}', '{1}')",
+                    "senha, " +
+                    "privilegioId) " +
+                    "VALUES ('{0}', '{1}', {2})",
                     _obj.Login.ToString(),
-                    _obj.Senha.ToString()
+                    _obj.Senha.ToString(),
+                    _obj.PrivilegioId.ToString()
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);
@@ -132,12 +159,11 @@ namespace Repositories
                 String SQL = String.Format("UPDATE usuario SET " +
                     "login = '{0}', " +
                     "senha = '{1}', " +
-                    "nome = '{2}', " +
-                    "email = '{3}' WHERE usuarioId = {4}",
+                    "privilegioId = {2} WHERE usuarioId = {3}",
                     _obj.Login,
                     _obj.Senha,
-                    _obj.Nome,
-                    _obj.Email
+                    _obj.PrivilegioId,
+                    _obj.UsuarioId
                     );
 
                 int linhasAfetadas = Conexao.ExecutarIDU(SQL);

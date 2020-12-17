@@ -82,14 +82,17 @@ namespace Views.Sintoma
                 if (this.Tag != null)
                 {
                     buttonAlterar.Visible = true;
-
+                    this.Text = "Edição de Sintomas";
                     buttonSalvar.Visible = false;
-
                     txtSintomaId.Enabled = false;
 
                     SintomaModel s = (SintomaModel)this.Tag;
 
                     CarregarSintomaForm(s);
+                }
+                else
+                {
+                    this.Text = "Cadastro de Sintomas";
                 }
             }
             catch (Exception ex)

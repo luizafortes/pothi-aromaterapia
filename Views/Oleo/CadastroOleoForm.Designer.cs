@@ -39,6 +39,7 @@ namespace Views.Oleo
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelOleoId = new System.Windows.Forms.Label();
             this.txtOleoId = new System.Windows.Forms.TextBox();
+            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
             this.dadosOleo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +127,7 @@ namespace Views.Oleo
             this.labelOleoId.AutoSize = true;
             this.labelOleoId.Location = new System.Drawing.Point(9, 8);
             this.labelOleoId.Name = "labelOleoId";
-            this.labelOleoId.Size = new System.Drawing.Size(54, 13);
+            this.labelOleoId.Size = new System.Drawing.Size(38, 13);
             this.labelOleoId.TabIndex = 14;
             this.labelOleoId.Text = "OleoId";
             // 
@@ -140,11 +141,19 @@ namespace Views.Oleo
             this.txtOleoId.Size = new System.Drawing.Size(74, 13);
             this.txtOleoId.TabIndex = 13;
             // 
+            // printPreviewControl1
+            // 
+            this.printPreviewControl1.Location = new System.Drawing.Point(156, 0);
+            this.printPreviewControl1.Name = "printPreviewControl1";
+            this.printPreviewControl1.Size = new System.Drawing.Size(8, 8);
+            this.printPreviewControl1.TabIndex = 15;
+            // 
             // OleoCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 250);
+            this.Controls.Add(this.printPreviewControl1);
             this.Controls.Add(this.labelOleoId);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.txtOleoId);
@@ -153,7 +162,7 @@ namespace Views.Oleo
             this.Controls.Add(this.dadosOleo);
             this.Name = "OleoCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cadastro de Óleos";
+            this.Text = "Cadastro de Óleo";
             this.Load += new System.EventHandler(this.CadastroOleoForm_Load);
             this.dadosOleo.ResumeLayout(false);
             this.dadosOleo.PerformLayout();
@@ -174,6 +183,7 @@ namespace Views.Oleo
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Label labelDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
     }
 
 }

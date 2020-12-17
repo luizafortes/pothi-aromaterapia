@@ -22,6 +22,8 @@ namespace Controllers
                         return _rep.GetAll();
                     case 'o':
                         return _rep.GetForID((int)_param);
+                    case 'l':
+                        return _rep.GetForLogin((UsuarioModel)_param);
                     case 'i':
                         return _rep.Insert((UsuarioModel)_param);
                     case 'd':

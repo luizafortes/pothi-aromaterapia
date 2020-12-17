@@ -63,6 +63,7 @@ namespace Views.Oleo
             {
                 txtOleoId.Text = _oleo.OleoId.ToString();
                 txtNome.Text = _oleo.Nome;
+                txtDescricao.Text = _oleo.Descricao;
             }
             catch (Exception ex)
             {
@@ -80,6 +81,7 @@ namespace Views.Oleo
                 if (this.Tag != null)
                 {
                     buttonAlterar.Visible = true;
+                    this.Text = "Edição de Óleo";
 
                     buttonSalvar.Visible = false;
 
@@ -88,6 +90,10 @@ namespace Views.Oleo
                     OleoModel o = (OleoModel)this.Tag;
 
                     CarregarOleoForm(o);
+                }
+                else
+                {
+                    this.Text = "Cadastro de Óleo";
                 }
             }
             catch (Exception ex)

@@ -66,6 +66,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
+            this.labelPessoaId = new System.Windows.Forms.Label();
+            this.txtPessoaId = new System.Windows.Forms.TextBox();
             this.dadosPrincipais.SuspendLayout();
             this.dadosAdicionais.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,7 +86,7 @@
             this.dadosPrincipais.Controls.Add(this.labelCPF);
             this.dadosPrincipais.Controls.Add(this.labelNome);
             this.dadosPrincipais.Controls.Add(this.txtNome);
-            this.dadosPrincipais.Location = new System.Drawing.Point(12, 34);
+            this.dadosPrincipais.Location = new System.Drawing.Point(12, 45);
             this.dadosPrincipais.Name = "dadosPrincipais";
             this.dadosPrincipais.Size = new System.Drawing.Size(455, 105);
             this.dadosPrincipais.TabIndex = 0;
@@ -166,7 +168,7 @@
             this.dadosAdicionais.Controls.Add(this.groupBox3);
             this.dadosAdicionais.Controls.Add(this.groupBox2);
             this.dadosAdicionais.Controls.Add(this.groupBox1);
-            this.dadosAdicionais.Location = new System.Drawing.Point(12, 261);
+            this.dadosAdicionais.Location = new System.Drawing.Point(12, 272);
             this.dadosAdicionais.Name = "dadosAdicionais";
             this.dadosAdicionais.Size = new System.Drawing.Size(455, 165);
             this.dadosAdicionais.TabIndex = 1;
@@ -319,7 +321,7 @@
             this.endereco.Controls.Add(this.labelLogradouro);
             this.endereco.Controls.Add(this.txtLogradouro);
             this.endereco.Controls.Add(this.labelTipoLogradouro);
-            this.endereco.Location = new System.Drawing.Point(12, 145);
+            this.endereco.Location = new System.Drawing.Point(12, 156);
             this.endereco.Name = "endereco";
             this.endereco.Size = new System.Drawing.Size(455, 110);
             this.endereco.TabIndex = 9;
@@ -454,7 +456,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(311, 433);
+            this.buttonSalvar.Location = new System.Drawing.Point(311, 444);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 10;
@@ -464,7 +466,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(392, 433);
+            this.buttonCancelar.Location = new System.Drawing.Point(392, 444);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 11;
@@ -474,7 +476,7 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(311, 433);
+            this.buttonAlterar.Location = new System.Drawing.Point(311, 444);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 12;
@@ -483,11 +485,32 @@
             this.buttonAlterar.Visible = false;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
+            // labelPessoaId
+            // 
+            this.labelPessoaId.AutoSize = true;
+            this.labelPessoaId.Location = new System.Drawing.Point(12, 8);
+            this.labelPessoaId.Name = "labelPessoaId";
+            this.labelPessoaId.Size = new System.Drawing.Size(51, 13);
+            this.labelPessoaId.TabIndex = 15;
+            this.labelPessoaId.Text = "PessoaId";
+            // 
+            // txtPessoaId
+            // 
+            this.txtPessoaId.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPessoaId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPessoaId.Location = new System.Drawing.Point(15, 26);
+            this.txtPessoaId.Name = "txtPessoaId";
+            this.txtPessoaId.ReadOnly = true;
+            this.txtPessoaId.Size = new System.Drawing.Size(74, 13);
+            this.txtPessoaId.TabIndex = 16;
+            // 
             // PessoaCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 463);
+            this.ClientSize = new System.Drawing.Size(479, 475);
+            this.Controls.Add(this.txtPessoaId);
+            this.Controls.Add(this.labelPessoaId);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
@@ -510,6 +533,7 @@
             this.endereco.ResumeLayout(false);
             this.endereco.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -553,5 +577,7 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.Label labelPessoaId;
+        private System.Windows.Forms.TextBox txtPessoaId;
     }
 }

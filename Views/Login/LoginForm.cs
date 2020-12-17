@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
+using Controllers;
 
 namespace Views.Login
 {
@@ -65,14 +66,16 @@ namespace Views.Login
         {
             try
             {
-                if (_user.Login.Equals("admin") && _user.Senha.Equals("admin"))
+                UsuarioController control = new UsuarioController();
+
+                if ((Boolean)control.BD('l', _user))
                 {
                     return true;
                 }
                 else
                 {
                     return false;
-                }
+                }                
             }
             catch (Exception ex)
             {

@@ -37,9 +37,9 @@ namespace Views.Usuario
             {
                 dataGridViewDados.Rows.Clear();
 
-
                 //Chamada para o controller (busca dos dados)
                 UsuarioController control = new UsuarioController();
+                string privilegioNome;
 
                 //Alterado para atender a operação de Filtro por CPF e Nome
                 if (_filtro.Equals(""))
@@ -53,7 +53,22 @@ namespace Views.Usuario
 
                 foreach (UsuarioModel u in tabelaUsuarios.Values)
                 {
-                    dataGridViewDados.Rows.Add(u.UsuarioId, u.Login);
+                    switch (u.PrivilegioId)
+                    {
+                        case 1:
+                            privilegioNome = "Master";
+                            break;
+                        case 2:
+                            privilegioNome = "Normal";
+                            break;
+                        case 3:
+                            privilegioNome = "Administrador";
+                            break;
+                        default:
+                            privilegioNome = "";
+                            break;
+                    }
+                    dataGridViewDados.Rows.Add(u.UsuarioId, u.Login, privilegioNome);
                 }
             }
             catch (Exception ex)
@@ -74,6 +89,7 @@ namespace Views.Usuario
 
             fp.ShowDialog();
         }
+
         private void imDelete_Click(object sender, EventArgs e)
         {
             try

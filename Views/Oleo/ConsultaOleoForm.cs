@@ -51,9 +51,9 @@ namespace Views.Oleo
                     this.tabelaOleos = (Dictionary<int, OleoModel>)control.BD('f', _filtro);
                 }
 
-                foreach (OleoModel s in tabelaOleos.Values)
+                foreach (OleoModel o in tabelaOleos.Values)
                 {
-                    dataGridViewDados.Rows.Add(s.OleoId, s.Nome, s.Descricao);
+                    dataGridViewDados.Rows.Add(o.OleoId, o.Nome, o.Descricao);
                 }
             }
             catch (Exception ex)
@@ -64,28 +64,28 @@ namespace Views.Oleo
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int sintomaId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
+            int oleoId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
 
-            OleoModel s = tabelaOleos[sintomaId];
+            OleoModel o = tabelaOleos[oleoId];
 
-            OleoCadastroForm fp = new OleoCadastroForm();
+            OleoCadastroForm formOleo = new OleoCadastroForm();
 
-            fp.Tag = s;
+            formOleo.Tag = o;
 
-            fp.ShowDialog();
+            formOleo.ShowDialog();
         }
 
         private void imDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                int sintomaId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
+                int oleoId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
 
                 OleoController control = new OleoController();
 
-                if ((Boolean)control.BD('d', sintomaId))
+                if ((Boolean)control.BD('d', oleoId))
                 {
-                    MessageBox.Show("Oleo deletada com sucesso!");
+                    MessageBox.Show("Oleo deletado com sucesso!");
 
                     CarregarGrid("");
                 }

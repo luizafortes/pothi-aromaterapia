@@ -14,7 +14,7 @@ namespace Views.Pessoa
 {
     public partial class PessoaConsultaForm : Form
     {
-        private Dictionary<Int64, PessoaModel> tabelaPessoas;
+        private Dictionary<int, PessoaModel> tabelaPessoas;
 
         public PessoaConsultaForm()
         {
@@ -44,16 +44,16 @@ namespace Views.Pessoa
                 //Alterado para atender a operação de Filtro por CPF e Nome
                 if (_filtro.Equals(""))
                 {
-                    this.tabelaPessoas = (Dictionary<Int64, PessoaModel>)control.BD('t', null);
+                    this.tabelaPessoas = (Dictionary<int, PessoaModel>)control.BD('t', null);
                 }
                 else
                 {
-                    this.tabelaPessoas = (Dictionary<Int64, PessoaModel>)control.BD('f', _filtro);
+                    this.tabelaPessoas = (Dictionary<int, PessoaModel>)control.BD('f', _filtro);
                 }
 
                 foreach (PessoaModel p in tabelaPessoas.Values)
                 {
-                    dataGridViewDados.Rows.Add(p.Cpf, p.Nome, p.Email);
+                    dataGridViewDados.Rows.Add(p.PessoaId, p.Cpf, p.Nome, p.Email);
                 }
             }
             catch (Exception ex)
@@ -64,26 +64,26 @@ namespace Views.Pessoa
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Int64 cpf = Convert.ToInt64(dataGridViewDados.SelectedRows[0].Cells[0].Value);
+            int pessoaId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
 
-            PessoaModel p = tabelaPessoas[cpf];
+            PessoaModel p = tabelaPessoas[pessoaId];
 
-            PessoaCadastroForm fp = new PessoaCadastroForm();
+            PessoaCadastroForm formPessoa = new PessoaCadastroForm();
 
-            fp.Tag = p;
+            formPessoa.Tag = p;
 
-            fp.ShowDialog();
+            formPessoa.ShowDialog();
         }
 
         private void imDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                Int64 cpf = Convert.ToInt64(dataGridViewDados.SelectedRows[0].Cells[0].Value);
+                int pessoaId = Convert.ToInt32(dataGridViewDados.SelectedRows[0].Cells[0].Value);
 
                 PessoaController control = new PessoaController();
 
-                if ((Boolean)control.BD('d', cpf))
+                if ((Boolean)control.BD('d', pessoaId))
                 {
                     MessageBox.Show("Pessoa deletada com sucesso!");
 

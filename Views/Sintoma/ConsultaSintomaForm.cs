@@ -68,11 +68,11 @@ namespace Views.Sintoma
 
             SintomaModel s = tabelaSintomas[sintomaId];
 
-            SintomaCadastroForm fp = new SintomaCadastroForm();
+            SintomaCadastroForm formSintoma = new SintomaCadastroForm();
 
-            fp.Tag = s;
+            formSintoma.Tag = s;
 
-            fp.ShowDialog();
+            formSintoma.ShowDialog();
         }
 
         private void imDelete_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace Views.Sintoma
 
                 if ((Boolean)control.BD('d', sintomaId))
                 {
-                    MessageBox.Show("Sintoma deletada com sucesso!");
+                    MessageBox.Show("Sintoma deletado com sucesso!");
 
                     CarregarGrid("");
                 }
