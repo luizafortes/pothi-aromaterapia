@@ -21,7 +21,7 @@ namespace Views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PessoaConsultaForm());
+            Application.Run(new Index());
         }
     }
 }
